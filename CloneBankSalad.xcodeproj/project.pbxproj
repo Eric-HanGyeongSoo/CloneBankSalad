@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		462F46BF28AF9F0B00B5BA68 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 462F46BE28AF9F0B00B5BA68 /* RxCocoa */; };
+		462F46C128AF9F0B00B5BA68 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 462F46C028AF9F0B00B5BA68 /* RxRelay */; };
+		462F46C328AF9F0B00B5BA68 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 462F46C228AF9F0B00B5BA68 /* RxSwift */; };
+		462F46CB28AF9F3C00B5BA68 /* CloneBankSaladTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F46CA28AF9F3C00B5BA68 /* CloneBankSaladTests.swift */; };
+		462F46D828AF9F4D00B5BA68 /* CloneBankSaladUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F46D728AF9F4D00B5BA68 /* CloneBankSaladUITests.swift */; };
+		462F46DA28AF9F4D00B5BA68 /* CloneBankSaladUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F46D928AF9F4D00B5BA68 /* CloneBankSaladUITestsLaunchTests.swift */; };
 		46F9A0C328AF9C2600D43341 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F9A0C228AF9C2600D43341 /* AppDelegate.swift */; };
 		46F9A0C528AF9C2600D43341 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F9A0C428AF9C2600D43341 /* SceneDelegate.swift */; };
 		46F9A0C728AF9C2600D43341 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F9A0C628AF9C2600D43341 /* ViewController.swift */; };
@@ -15,7 +21,29 @@
 		46F9A0CF28AF9C2700D43341 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46F9A0CD28AF9C2700D43341 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		462F46CC28AF9F3C00B5BA68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46F9A0B728AF9C2600D43341 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46F9A0BE28AF9C2600D43341;
+			remoteInfo = CloneBankSalad;
+		};
+		462F46DB28AF9F4D00B5BA68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46F9A0B728AF9C2600D43341 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46F9A0BE28AF9C2600D43341;
+			remoteInfo = CloneBankSalad;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		462F46C828AF9F3C00B5BA68 /* CloneBankSaladTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloneBankSaladTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		462F46CA28AF9F3C00B5BA68 /* CloneBankSaladTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloneBankSaladTests.swift; sourceTree = "<group>"; };
+		462F46D528AF9F4D00B5BA68 /* CloneBankSaladUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloneBankSaladUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		462F46D728AF9F4D00B5BA68 /* CloneBankSaladUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloneBankSaladUITests.swift; sourceTree = "<group>"; };
+		462F46D928AF9F4D00B5BA68 /* CloneBankSaladUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloneBankSaladUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		46F9A0BF28AF9C2600D43341 /* CloneBankSalad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloneBankSalad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46F9A0C228AF9C2600D43341 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46F9A0C428AF9C2600D43341 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,20 +55,56 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		46F9A0BC28AF9C2600D43341 /* Frameworks */ = {
+		462F46C528AF9F3C00B5BA68 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		462F46D228AF9F4D00B5BA68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46F9A0BC28AF9C2600D43341 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				462F46C328AF9F0B00B5BA68 /* RxSwift in Frameworks */,
+				462F46C128AF9F0B00B5BA68 /* RxRelay in Frameworks */,
+				462F46BF28AF9F0B00B5BA68 /* RxCocoa in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		462F46C928AF9F3C00B5BA68 /* CloneBankSaladTests */ = {
+			isa = PBXGroup;
+			children = (
+				462F46CA28AF9F3C00B5BA68 /* CloneBankSaladTests.swift */,
+			);
+			path = CloneBankSaladTests;
+			sourceTree = "<group>";
+		};
+		462F46D628AF9F4D00B5BA68 /* CloneBankSaladUITests */ = {
+			isa = PBXGroup;
+			children = (
+				462F46D728AF9F4D00B5BA68 /* CloneBankSaladUITests.swift */,
+				462F46D928AF9F4D00B5BA68 /* CloneBankSaladUITestsLaunchTests.swift */,
+			);
+			path = CloneBankSaladUITests;
+			sourceTree = "<group>";
+		};
 		46F9A0B628AF9C2600D43341 = {
 			isa = PBXGroup;
 			children = (
 				46F9A0C128AF9C2600D43341 /* CloneBankSalad */,
+				462F46C928AF9F3C00B5BA68 /* CloneBankSaladTests */,
+				462F46D628AF9F4D00B5BA68 /* CloneBankSaladUITests */,
 				46F9A0C028AF9C2600D43341 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				46F9A0BF28AF9C2600D43341 /* CloneBankSalad.app */,
+				462F46C828AF9F3C00B5BA68 /* CloneBankSaladTests.xctest */,
+				462F46D528AF9F4D00B5BA68 /* CloneBankSaladUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +136,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		462F46C728AF9F3C00B5BA68 /* CloneBankSaladTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 462F46CE28AF9F3C00B5BA68 /* Build configuration list for PBXNativeTarget "CloneBankSaladTests" */;
+			buildPhases = (
+				462F46C428AF9F3C00B5BA68 /* Sources */,
+				462F46C528AF9F3C00B5BA68 /* Frameworks */,
+				462F46C628AF9F3C00B5BA68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				462F46CD28AF9F3C00B5BA68 /* PBXTargetDependency */,
+			);
+			name = CloneBankSaladTests;
+			productName = CloneBankSaladTests;
+			productReference = 462F46C828AF9F3C00B5BA68 /* CloneBankSaladTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		462F46D428AF9F4D00B5BA68 /* CloneBankSaladUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 462F46DD28AF9F4D00B5BA68 /* Build configuration list for PBXNativeTarget "CloneBankSaladUITests" */;
+			buildPhases = (
+				462F46D128AF9F4D00B5BA68 /* Sources */,
+				462F46D228AF9F4D00B5BA68 /* Frameworks */,
+				462F46D328AF9F4D00B5BA68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				462F46DC28AF9F4D00B5BA68 /* PBXTargetDependency */,
+			);
+			name = CloneBankSaladUITests;
+			productName = CloneBankSaladUITests;
+			productReference = 462F46D528AF9F4D00B5BA68 /* CloneBankSaladUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		46F9A0BE28AF9C2600D43341 /* CloneBankSalad */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46F9A0D328AF9C2700D43341 /* Build configuration list for PBXNativeTarget "CloneBankSalad" */;
@@ -83,6 +185,11 @@
 			dependencies = (
 			);
 			name = CloneBankSalad;
+			packageProductDependencies = (
+				462F46BE28AF9F0B00B5BA68 /* RxCocoa */,
+				462F46C028AF9F0B00B5BA68 /* RxRelay */,
+				462F46C228AF9F0B00B5BA68 /* RxSwift */,
+			);
 			productName = CloneBankSalad;
 			productReference = 46F9A0BF28AF9C2600D43341 /* CloneBankSalad.app */;
 			productType = "com.apple.product-type.application";
@@ -97,6 +204,14 @@
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					462F46C728AF9F3C00B5BA68 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 46F9A0BE28AF9C2600D43341;
+					};
+					462F46D428AF9F4D00B5BA68 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 46F9A0BE28AF9C2600D43341;
+					};
 					46F9A0BE28AF9C2600D43341 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -111,16 +226,35 @@
 				Base,
 			);
 			mainGroup = 46F9A0B628AF9C2600D43341;
+			packageReferences = (
+				462F46BD28AF9F0B00B5BA68 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 46F9A0C028AF9C2600D43341 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				46F9A0BE28AF9C2600D43341 /* CloneBankSalad */,
+				462F46C728AF9F3C00B5BA68 /* CloneBankSaladTests */,
+				462F46D428AF9F4D00B5BA68 /* CloneBankSaladUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		462F46C628AF9F3C00B5BA68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		462F46D328AF9F4D00B5BA68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46F9A0BD28AF9C2600D43341 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -134,6 +268,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		462F46C428AF9F3C00B5BA68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				462F46CB28AF9F3C00B5BA68 /* CloneBankSaladTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		462F46D128AF9F4D00B5BA68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				462F46DA28AF9F4D00B5BA68 /* CloneBankSaladUITestsLaunchTests.swift in Sources */,
+				462F46D828AF9F4D00B5BA68 /* CloneBankSaladUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46F9A0BB28AF9C2600D43341 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,6 +296,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		462F46CD28AF9F3C00B5BA68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46F9A0BE28AF9C2600D43341 /* CloneBankSalad */;
+			targetProxy = 462F46CC28AF9F3C00B5BA68 /* PBXContainerItemProxy */;
+		};
+		462F46DC28AF9F4D00B5BA68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46F9A0BE28AF9C2600D43341 /* CloneBankSalad */;
+			targetProxy = 462F46DB28AF9F4D00B5BA68 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		46F9A0C828AF9C2600D43341 /* Main.storyboard */ = {
@@ -166,6 +330,72 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		462F46CF28AF9F3C00B5BA68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.codecamper.CloneBankSaladTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CloneBankSalad.app/CloneBankSalad";
+			};
+			name = Debug;
+		};
+		462F46D028AF9F3C00B5BA68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.codecamper.CloneBankSaladTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CloneBankSalad.app/CloneBankSalad";
+			};
+			name = Release;
+		};
+		462F46DE28AF9F4D00B5BA68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.codecamper.CloneBankSaladUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CloneBankSalad;
+			};
+			name = Debug;
+		};
+		462F46DF28AF9F4D00B5BA68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.codecamper.CloneBankSaladUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CloneBankSalad;
+			};
+			name = Release;
+		};
 		46F9A0D128AF9C2700D43341 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -337,6 +567,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		462F46CE28AF9F3C00B5BA68 /* Build configuration list for PBXNativeTarget "CloneBankSaladTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				462F46CF28AF9F3C00B5BA68 /* Debug */,
+				462F46D028AF9F3C00B5BA68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		462F46DD28AF9F4D00B5BA68 /* Build configuration list for PBXNativeTarget "CloneBankSaladUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				462F46DE28AF9F4D00B5BA68 /* Debug */,
+				462F46DF28AF9F4D00B5BA68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		46F9A0BA28AF9C2600D43341 /* Build configuration list for PBXProject "CloneBankSalad" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -356,6 +604,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		462F46BD28AF9F0B00B5BA68 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		462F46BE28AF9F0B00B5BA68 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 462F46BD28AF9F0B00B5BA68 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		462F46C028AF9F0B00B5BA68 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 462F46BD28AF9F0B00B5BA68 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		462F46C228AF9F0B00B5BA68 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 462F46BD28AF9F0B00B5BA68 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 46F9A0B728AF9C2600D43341 /* Project object */;
 }
