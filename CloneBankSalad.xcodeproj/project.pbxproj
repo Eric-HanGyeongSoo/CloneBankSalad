@@ -7,12 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		461087E628B1F59700616985 /* NameTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461087E528B1F59700616985 /* NameTextFieldView.swift */; };
+		461087E928B1F6EE00616985 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 461087E828B1F6EE00616985 /* SnapKit */; };
+		461087ED28B2100500616985 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461087EC28B2100500616985 /* UIFont+Extension.swift */; };
+		461087F628B211B500616985 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 461087F028B211B400616985 /* NotoSansKR-Black.otf */; };
+		461087F728B211B500616985 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 461087F028B211B400616985 /* NotoSansKR-Black.otf */; };
+		461087F828B211B500616985 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 461087F028B211B400616985 /* NotoSansKR-Black.otf */; };
+		461087F928B211B500616985 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 461087F128B211B500616985 /* NotoSansKR-Medium.otf */; };
+		461087FA28B211B500616985 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 461087F128B211B500616985 /* NotoSansKR-Medium.otf */; };
+		461087FB28B211B500616985 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 461087F128B211B500616985 /* NotoSansKR-Medium.otf */; };
+		461087FC28B211B500616985 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 461087F228B211B500616985 /* NotoSansKR-Bold.otf */; };
+		461087FD28B211B500616985 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 461087F228B211B500616985 /* NotoSansKR-Bold.otf */; };
+		461087FE28B211B500616985 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 461087F228B211B500616985 /* NotoSansKR-Bold.otf */; };
+		461087FF28B211B500616985 /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 461087F328B211B500616985 /* NotoSansKR-Thin.otf */; };
+		4610880028B211B500616985 /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 461087F328B211B500616985 /* NotoSansKR-Thin.otf */; };
+		4610880128B211B600616985 /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 461087F328B211B500616985 /* NotoSansKR-Thin.otf */; };
+		4610880228B211B600616985 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 461087F428B211B500616985 /* NotoSansKR-Regular.otf */; };
+		4610880328B211B600616985 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 461087F428B211B500616985 /* NotoSansKR-Regular.otf */; };
+		4610880428B211B600616985 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 461087F428B211B500616985 /* NotoSansKR-Regular.otf */; };
+		4610880528B211B600616985 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 461087F528B211B500616985 /* NotoSansKR-Light.otf */; };
+		4610880628B211B600616985 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 461087F528B211B500616985 /* NotoSansKR-Light.otf */; };
+		4610880728B211B600616985 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 461087F528B211B500616985 /* NotoSansKR-Light.otf */; };
+		4610880C28B2134900616985 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610880B28B2134900616985 /* UIColor+Extension.swift */; };
+		4610880D28B2134900616985 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610880B28B2134900616985 /* UIColor+Extension.swift */; };
+		4610880E28B2134900616985 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610880B28B2134900616985 /* UIColor+Extension.swift */; };
+		4610881028B215B100616985 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610880F28B215B100616985 /* UIImage+Extension.swift */; };
+		4610881128B215B100616985 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610880F28B215B100616985 /* UIImage+Extension.swift */; };
+		4610881228B215B100616985 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610880F28B215B100616985 /* UIImage+Extension.swift */; };
+		4610881428B21BA400616985 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610881328B21BA400616985 /* NSAttributedString+Extension.swift */; };
+		4610881528B21BA400616985 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610881328B21BA400616985 /* NSAttributedString+Extension.swift */; };
+		4610881628B21BA400616985 /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610881328B21BA400616985 /* NSAttributedString+Extension.swift */; };
+		4610881828B21C0700616985 /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610881728B21C0700616985 /* Optional+Extension.swift */; };
+		4610881928B21C0700616985 /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610881728B21C0700616985 /* Optional+Extension.swift */; };
+		4610881A28B21C0700616985 /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610881728B21C0700616985 /* Optional+Extension.swift */; };
 		462F46BF28AF9F0B00B5BA68 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 462F46BE28AF9F0B00B5BA68 /* RxCocoa */; };
 		462F46C128AF9F0B00B5BA68 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 462F46C028AF9F0B00B5BA68 /* RxRelay */; };
 		462F46C328AF9F0B00B5BA68 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 462F46C228AF9F0B00B5BA68 /* RxSwift */; };
 		462F46CB28AF9F3C00B5BA68 /* CloneBankSaladTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F46CA28AF9F3C00B5BA68 /* CloneBankSaladTests.swift */; };
 		462F46D828AF9F4D00B5BA68 /* CloneBankSaladUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F46D728AF9F4D00B5BA68 /* CloneBankSaladUITests.swift */; };
 		462F46DA28AF9F4D00B5BA68 /* CloneBankSaladUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F46D928AF9F4D00B5BA68 /* CloneBankSaladUITestsLaunchTests.swift */; };
+		462F46E328AFA1D400B5BA68 /* IdentifyingUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F46E228AFA1D400B5BA68 /* IdentifyingUserViewController.swift */; };
+		462F46E628AFA28800B5BA68 /* IdentifyingUserViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F46E528AFA28800B5BA68 /* IdentifyingUserViewControllerTests.swift */; };
+		462F46E928AFA4A000B5BA68 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 462F46E828AFA4A000B5BA68 /* ReactorKit */; };
+		4630C80728B227770081EF94 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4630C80628B227770081EF94 /* IQKeyboardManagerSwift */; };
+		4630C80A28B23A1C0081EF94 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630C80928B23A1C0081EF94 /* UIViewController+Rx.swift */; };
+		4630C80C28B240120081EF94 /* UITextField+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630C80B28B240120081EF94 /* UITextField+Rx.swift */; };
 		46F9A0C328AF9C2600D43341 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F9A0C228AF9C2600D43341 /* AppDelegate.swift */; };
 		46F9A0C528AF9C2600D43341 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F9A0C428AF9C2600D43341 /* SceneDelegate.swift */; };
 		46F9A0C728AF9C2600D43341 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F9A0C628AF9C2600D43341 /* ViewController.swift */; };
@@ -39,11 +78,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		461087E528B1F59700616985 /* NameTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldView.swift; sourceTree = "<group>"; };
+		461087EC28B2100500616985 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		461087F028B211B400616985 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
+		461087F128B211B500616985 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		461087F228B211B500616985 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
+		461087F328B211B500616985 /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
+		461087F428B211B500616985 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
+		461087F528B211B500616985 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
+		4610880B28B2134900616985 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		4610880F28B215B100616985 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		4610881328B21BA400616985 /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
+		4610881728B21C0700616985 /* Optional+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extension.swift"; sourceTree = "<group>"; };
 		462F46C828AF9F3C00B5BA68 /* CloneBankSaladTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloneBankSaladTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		462F46CA28AF9F3C00B5BA68 /* CloneBankSaladTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloneBankSaladTests.swift; sourceTree = "<group>"; };
 		462F46D528AF9F4D00B5BA68 /* CloneBankSaladUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloneBankSaladUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		462F46D728AF9F4D00B5BA68 /* CloneBankSaladUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloneBankSaladUITests.swift; sourceTree = "<group>"; };
 		462F46D928AF9F4D00B5BA68 /* CloneBankSaladUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloneBankSaladUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		462F46E228AFA1D400B5BA68 /* IdentifyingUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyingUserViewController.swift; sourceTree = "<group>"; };
+		462F46E528AFA28800B5BA68 /* IdentifyingUserViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyingUserViewControllerTests.swift; sourceTree = "<group>"; };
+		4630C80928B23A1C0081EF94 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
+		4630C80B28B240120081EF94 /* UITextField+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Rx.swift"; sourceTree = "<group>"; };
 		46F9A0BF28AF9C2600D43341 /* CloneBankSalad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloneBankSalad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46F9A0C228AF9C2600D43341 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46F9A0C428AF9C2600D43341 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,17 +130,93 @@
 			files = (
 				462F46C328AF9F0B00B5BA68 /* RxSwift in Frameworks */,
 				462F46C128AF9F0B00B5BA68 /* RxRelay in Frameworks */,
+				462F46E928AFA4A000B5BA68 /* ReactorKit in Frameworks */,
 				462F46BF28AF9F0B00B5BA68 /* RxCocoa in Frameworks */,
+				461087E928B1F6EE00616985 /* SnapKit in Frameworks */,
+				4630C80728B227770081EF94 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		461087E428B1F56E00616985 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				461087E528B1F59700616985 /* NameTextFieldView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		461087EB28B20FFC00616985 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				461087EC28B2100500616985 /* UIFont+Extension.swift */,
+				4610880B28B2134900616985 /* UIColor+Extension.swift */,
+				4610880F28B215B100616985 /* UIImage+Extension.swift */,
+				4610881328B21BA400616985 /* NSAttributedString+Extension.swift */,
+				4610881728B21C0700616985 /* Optional+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		461087EE28B2118E00616985 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4610880A28B2125300616985 /* Storyboards */,
+				461087EF28B2119200616985 /* Fonts */,
+				46F9A0CB28AF9C2700D43341 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		461087EF28B2119200616985 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				461087F028B211B400616985 /* NotoSansKR-Black.otf */,
+				461087F228B211B500616985 /* NotoSansKR-Bold.otf */,
+				461087F528B211B500616985 /* NotoSansKR-Light.otf */,
+				461087F128B211B500616985 /* NotoSansKR-Medium.otf */,
+				461087F428B211B500616985 /* NotoSansKR-Regular.otf */,
+				461087F328B211B500616985 /* NotoSansKR-Thin.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		4610880828B2123600616985 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				4610880928B2124600616985 /* LifeCycles */,
+				461087EB28B20FFC00616985 /* Extensions */,
+				4630C80828B23A110081EF94 /* Rx */,
+				462F46E028AFA1AE00B5BA68 /* ViewController */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		4610880928B2124600616985 /* LifeCycles */ = {
+			isa = PBXGroup;
+			children = (
+				46F9A0C228AF9C2600D43341 /* AppDelegate.swift */,
+				46F9A0C428AF9C2600D43341 /* SceneDelegate.swift */,
+			);
+			path = LifeCycles;
+			sourceTree = "<group>";
+		};
+		4610880A28B2125300616985 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				46F9A0C828AF9C2600D43341 /* Main.storyboard */,
+				46F9A0CD28AF9C2700D43341 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		462F46C928AF9F3C00B5BA68 /* CloneBankSaladTests */ = {
 			isa = PBXGroup;
 			children = (
 				462F46CA28AF9F3C00B5BA68 /* CloneBankSaladTests.swift */,
+				462F46E428AFA27100B5BA68 /* OnboardingTests */,
 			);
 			path = CloneBankSaladTests;
 			sourceTree = "<group>";
@@ -97,6 +228,40 @@
 				462F46D928AF9F4D00B5BA68 /* CloneBankSaladUITestsLaunchTests.swift */,
 			);
 			path = CloneBankSaladUITests;
+			sourceTree = "<group>";
+		};
+		462F46E028AFA1AE00B5BA68 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				462F46E128AFA1B800B5BA68 /* Onboarding */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		462F46E128AFA1B800B5BA68 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				461087E428B1F56E00616985 /* View */,
+				462F46E228AFA1D400B5BA68 /* IdentifyingUserViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		462F46E428AFA27100B5BA68 /* OnboardingTests */ = {
+			isa = PBXGroup;
+			children = (
+				462F46E528AFA28800B5BA68 /* IdentifyingUserViewControllerTests.swift */,
+			);
+			path = OnboardingTests;
+			sourceTree = "<group>";
+		};
+		4630C80828B23A110081EF94 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				4630C80928B23A1C0081EF94 /* UIViewController+Rx.swift */,
+				4630C80B28B240120081EF94 /* UITextField+Rx.swift */,
+			);
+			path = Rx;
 			sourceTree = "<group>";
 		};
 		46F9A0B628AF9C2600D43341 = {
@@ -122,12 +287,9 @@
 		46F9A0C128AF9C2600D43341 /* CloneBankSalad */ = {
 			isa = PBXGroup;
 			children = (
-				46F9A0C228AF9C2600D43341 /* AppDelegate.swift */,
-				46F9A0C428AF9C2600D43341 /* SceneDelegate.swift */,
+				4610880828B2123600616985 /* Sources */,
+				461087EE28B2118E00616985 /* Resources */,
 				46F9A0C628AF9C2600D43341 /* ViewController.swift */,
-				46F9A0C828AF9C2600D43341 /* Main.storyboard */,
-				46F9A0CB28AF9C2700D43341 /* Assets.xcassets */,
-				46F9A0CD28AF9C2700D43341 /* LaunchScreen.storyboard */,
 				46F9A0D028AF9C2700D43341 /* Info.plist */,
 			);
 			path = CloneBankSalad;
@@ -189,6 +351,9 @@
 				462F46BE28AF9F0B00B5BA68 /* RxCocoa */,
 				462F46C028AF9F0B00B5BA68 /* RxRelay */,
 				462F46C228AF9F0B00B5BA68 /* RxSwift */,
+				462F46E828AFA4A000B5BA68 /* ReactorKit */,
+				461087E828B1F6EE00616985 /* SnapKit */,
+				4630C80628B227770081EF94 /* IQKeyboardManagerSwift */,
 			);
 			productName = CloneBankSalad;
 			productReference = 46F9A0BF28AF9C2600D43341 /* CloneBankSalad.app */;
@@ -228,6 +393,9 @@
 			mainGroup = 46F9A0B628AF9C2600D43341;
 			packageReferences = (
 				462F46BD28AF9F0B00B5BA68 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				462F46E728AFA4A000B5BA68 /* XCRemoteSwiftPackageReference "ReactorKit" */,
+				461087E728B1F6EE00616985 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				4630C80528B227770081EF94 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 46F9A0C028AF9C2600D43341 /* Products */;
 			projectDirPath = "";
@@ -245,6 +413,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4610880628B211B600616985 /* NotoSansKR-Light.otf in Resources */,
+				4610880028B211B500616985 /* NotoSansKR-Thin.otf in Resources */,
+				461087FA28B211B500616985 /* NotoSansKR-Medium.otf in Resources */,
+				461087FD28B211B500616985 /* NotoSansKR-Bold.otf in Resources */,
+				461087F728B211B500616985 /* NotoSansKR-Black.otf in Resources */,
+				4610880328B211B600616985 /* NotoSansKR-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +426,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4610880728B211B600616985 /* NotoSansKR-Light.otf in Resources */,
+				4610880128B211B600616985 /* NotoSansKR-Thin.otf in Resources */,
+				461087FB28B211B500616985 /* NotoSansKR-Medium.otf in Resources */,
+				461087FE28B211B500616985 /* NotoSansKR-Bold.otf in Resources */,
+				461087F828B211B500616985 /* NotoSansKR-Black.otf in Resources */,
+				4610880428B211B600616985 /* NotoSansKR-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,8 +440,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				46F9A0CF28AF9C2700D43341 /* LaunchScreen.storyboard in Resources */,
+				461087FF28B211B500616985 /* NotoSansKR-Thin.otf in Resources */,
 				46F9A0CC28AF9C2700D43341 /* Assets.xcassets in Resources */,
+				461087F928B211B500616985 /* NotoSansKR-Medium.otf in Resources */,
 				46F9A0CA28AF9C2600D43341 /* Main.storyboard in Resources */,
+				461087FC28B211B500616985 /* NotoSansKR-Bold.otf in Resources */,
+				4610880528B211B600616985 /* NotoSansKR-Light.otf in Resources */,
+				4610880228B211B600616985 /* NotoSansKR-Regular.otf in Resources */,
+				461087F628B211B500616985 /* NotoSansKR-Black.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +458,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4610880D28B2134900616985 /* UIColor+Extension.swift in Sources */,
+				4610881928B21C0700616985 /* Optional+Extension.swift in Sources */,
 				462F46CB28AF9F3C00B5BA68 /* CloneBankSaladTests.swift in Sources */,
+				4610881528B21BA400616985 /* NSAttributedString+Extension.swift in Sources */,
+				462F46E628AFA28800B5BA68 /* IdentifyingUserViewControllerTests.swift in Sources */,
+				4610881128B215B100616985 /* UIImage+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,8 +471,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4610880E28B2134900616985 /* UIColor+Extension.swift in Sources */,
+				4610881A28B21C0700616985 /* Optional+Extension.swift in Sources */,
 				462F46DA28AF9F4D00B5BA68 /* CloneBankSaladUITestsLaunchTests.swift in Sources */,
+				4610881628B21BA400616985 /* NSAttributedString+Extension.swift in Sources */,
 				462F46D828AF9F4D00B5BA68 /* CloneBankSaladUITests.swift in Sources */,
+				4610881228B215B100616985 /* UIImage+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,8 +484,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4610881428B21BA400616985 /* NSAttributedString+Extension.swift in Sources */,
+				4610880C28B2134900616985 /* UIColor+Extension.swift in Sources */,
+				461087ED28B2100500616985 /* UIFont+Extension.swift in Sources */,
+				461087E628B1F59700616985 /* NameTextFieldView.swift in Sources */,
+				4610881028B215B100616985 /* UIImage+Extension.swift in Sources */,
 				46F9A0C728AF9C2600D43341 /* ViewController.swift in Sources */,
 				46F9A0C328AF9C2600D43341 /* AppDelegate.swift in Sources */,
+				4630C80C28B240120081EF94 /* UITextField+Rx.swift in Sources */,
+				4610881828B21C0700616985 /* Optional+Extension.swift in Sources */,
+				462F46E328AFA1D400B5BA68 /* IdentifyingUserViewController.swift in Sources */,
+				4630C80A28B23A1C0081EF94 /* UIViewController+Rx.swift in Sources */,
 				46F9A0C528AF9C2600D43341 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,6 +721,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U9B2QVCTVS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CloneBankSalad/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -544,6 +749,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U9B2QVCTVS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CloneBankSalad/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -606,6 +812,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		461087E728B1F6EE00616985 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		462F46BD28AF9F0B00B5BA68 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -614,9 +828,30 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		462F46E728AFA4A000B5BA68 /* XCRemoteSwiftPackageReference "ReactorKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactorKit/ReactorKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		4630C80528B227770081EF94 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		461087E828B1F6EE00616985 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 461087E728B1F6EE00616985 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		462F46BE28AF9F0B00B5BA68 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 462F46BD28AF9F0B00B5BA68 /* XCRemoteSwiftPackageReference "RxSwift" */;
@@ -631,6 +866,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 462F46BD28AF9F0B00B5BA68 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		462F46E828AFA4A000B5BA68 /* ReactorKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 462F46E728AFA4A000B5BA68 /* XCRemoteSwiftPackageReference "ReactorKit" */;
+			productName = ReactorKit;
+		};
+		4630C80628B227770081EF94 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4630C80528B227770081EF94 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,0 +1,25 @@
+//
+//  UITextField+Rx.swift
+//  CloneBankSalad
+//
+//  Created by 한경수 on 2022/08/21.
+//
+
+import Foundation
+import UIKit
+import RxSwift
+import RxCocoa
+
+extension Reactive where Base == UITextField {
+  var isFirstResponder: ControlProperty<Bool> {
+    return base.rx.controlProperty(editingEvents: .allEditingEvents, getter: { base in
+      return base.isFirstResponder
+    }, setter: { base, newValue in
+      if newValue && base.canBecomeFirstResponder {
+        base.becomeFirstResponder()
+      } else if !newValue && base.canResignFirstResponder {
+        base.resignFirstResponder()
+      }
+    })
+  }
+}
