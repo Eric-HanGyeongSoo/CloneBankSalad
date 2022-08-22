@@ -11,6 +11,8 @@ import UIKit
 extension UIImage {
   enum AssetImage: String {
     case onboarding_clear
+    case onboarding_secure_star
+    case onboarding_hyphen
   }
   
   static func assetImage(_ image: AssetImage) -> UIImage {

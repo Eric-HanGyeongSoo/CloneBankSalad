@@ -61,6 +61,7 @@
 		B053B0B428B3551A008B751E /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053B0B328B3551A008B751E /* AppFlow.swift */; };
 		B053B0B728B3555F008B751E /* RxFlow in Frameworks */ = {isa = PBXBuildFile; productRef = B053B0B628B3555F008B751E /* RxFlow */; };
 		B053B0BB28B35BB3008B751E /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053B0BA28B35BB3008B751E /* OnboardingFlow.swift */; };
+		B0D3C14728B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D3C14628B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		46F9A0D028AF9C2700D43341 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B053B0B328B3551A008B751E /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		B053B0BA28B35BB3008B751E /* OnboardingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
+		B0D3C14628B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationNumberTextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				461087E528B1F59700616985 /* NameTextFieldView.swift */,
+				B0D3C14628B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				462F46E328AFA1D400B5BA68 /* IdentifyingUserViewController.swift in Sources */,
 				4630C80A28B23A1C0081EF94 /* UIViewController+Rx.swift in Sources */,
 				46F9A0C528AF9C2600D43341 /* SceneDelegate.swift in Sources */,
+				B0D3C14728B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -40,6 +40,12 @@ class IdentifyingViewController: UIViewController, View {
     return view
   }()
   
+  lazy var registrationNumberTextField: RegistrationNumberTextFieldView = {
+    let view = RegistrationNumberTextFieldView(frame: .zero)
+    view.reactor = RegistrationNumberTextFieldReactor()
+    return view
+  }()
+  
   // MARK: Properties
   var disposeBag = DisposeBag()
   
@@ -55,6 +61,7 @@ class IdentifyingViewController: UIViewController, View {
     self.view.addSubview(titleLabel)
     self.view.addSubview(subtitleLabel)
     self.view.addSubview(nameTextField)
+    self.view.addSubview(registrationNumberTextField)
     titleLabel.snp.makeConstraints { make in
       make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(20)
       make.top.equalTo(self.view.safeAreaLayoutGuide).offset(56)
@@ -67,6 +74,11 @@ class IdentifyingViewController: UIViewController, View {
       make.leading.equalToSuperview().offset(20)
       make.trailing.equalToSuperview().offset(-20)
       make.top.equalTo(subtitleLabel.snp.bottom).offset(25)
+    }
+    registrationNumberTextField.snp.makeConstraints { make in
+      make.leading.equalToSuperview().offset(20)
+      make.trailing.equalToSuperview().offset(-20)
+      make.top.equalTo(nameTextField.snp.bottom).offset(12)
     }
   }
   

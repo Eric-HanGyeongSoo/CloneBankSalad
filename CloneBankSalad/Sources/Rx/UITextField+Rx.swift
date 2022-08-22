@@ -22,4 +22,12 @@ extension Reactive where Base == UITextField {
       }
     })
   }
+  
+  var becomeFirstResponder: Binder<Void> {
+    return Binder(self.base) { textField, _ in
+      if textField.canBecomeFirstResponder {
+        textField.becomeFirstResponder()
+      }
+    }
+  }
 }
