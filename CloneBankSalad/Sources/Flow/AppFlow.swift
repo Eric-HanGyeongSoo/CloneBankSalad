@@ -34,11 +34,11 @@ class AppFlow: Flow {
     case .main:
       return .none
     case .onboard:
-      let vc = IdentifyingViewController()
-      let reactor = IdentifyingViewReactor()
-      vc.reactor = reactor
-      window.rootViewController = vc
-      return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: reactor))
+      let flow = OnboardingFlow()
+      Flows.use(flow, when: .created) {
+        self.window.rootViewController = $0
+      }
+      return .one(flowContributor: .contribute(withNextPresentable: flow, withNextStepper: OneStepper(withSingleStep: OnboardingStep.start)))
     }
   }
 }

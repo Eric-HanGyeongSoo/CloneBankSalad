@@ -60,6 +60,7 @@
 		46F9A0CF28AF9C2700D43341 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46F9A0CD28AF9C2700D43341 /* LaunchScreen.storyboard */; };
 		B053B0B428B3551A008B751E /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053B0B328B3551A008B751E /* AppFlow.swift */; };
 		B053B0B728B3555F008B751E /* RxFlow in Frameworks */ = {isa = PBXBuildFile; productRef = B053B0B628B3555F008B751E /* RxFlow */; };
+		B053B0BB28B35BB3008B751E /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053B0BA28B35BB3008B751E /* OnboardingFlow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		46F9A0CE28AF9C2700D43341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46F9A0D028AF9C2700D43341 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B053B0B328B3551A008B751E /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
+		B053B0BA28B35BB3008B751E /* OnboardingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				B053B0B328B3551A008B751E /* AppFlow.swift */,
+				B053B0BA28B35BB3008B751E /* OnboardingFlow.swift */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				4610881028B215B100616985 /* UIImage+Extension.swift in Sources */,
 				46F9A0C728AF9C2600D43341 /* ViewController.swift in Sources */,
 				46F9A0C328AF9C2600D43341 /* AppDelegate.swift in Sources */,
+				B053B0BB28B35BB3008B751E /* OnboardingFlow.swift in Sources */,
 				4630C80C28B240120081EF94 /* UITextField+Rx.swift in Sources */,
 				4610881828B21C0700616985 /* Optional+Extension.swift in Sources */,
 				462F46E328AFA1D400B5BA68 /* IdentifyingUserViewController.swift in Sources */,
