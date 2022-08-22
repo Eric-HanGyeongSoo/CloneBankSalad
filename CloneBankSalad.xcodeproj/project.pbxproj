@@ -58,6 +58,8 @@
 		46F9A0CA28AF9C2600D43341 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46F9A0C828AF9C2600D43341 /* Main.storyboard */; };
 		46F9A0CC28AF9C2700D43341 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46F9A0CB28AF9C2700D43341 /* Assets.xcassets */; };
 		46F9A0CF28AF9C2700D43341 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46F9A0CD28AF9C2700D43341 /* LaunchScreen.storyboard */; };
+		B053B0B428B3551A008B751E /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053B0B328B3551A008B751E /* AppFlow.swift */; };
+		B053B0B728B3555F008B751E /* RxFlow in Frameworks */ = {isa = PBXBuildFile; productRef = B053B0B628B3555F008B751E /* RxFlow */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,7 @@
 		46F9A0CB28AF9C2700D43341 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46F9A0CE28AF9C2700D43341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46F9A0D028AF9C2700D43341 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B053B0B328B3551A008B751E /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				462F46C328AF9F0B00B5BA68 /* RxSwift in Frameworks */,
+				B053B0B728B3555F008B751E /* RxFlow in Frameworks */,
 				462F46C128AF9F0B00B5BA68 /* RxRelay in Frameworks */,
 				462F46E928AFA4A000B5BA68 /* ReactorKit in Frameworks */,
 				462F46BF28AF9F0B00B5BA68 /* RxCocoa in Frameworks */,
@@ -148,16 +152,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		461087EB28B20FFC00616985 /* Extensions */ = {
+		461087EB28B20FFC00616985 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				461087EC28B2100500616985 /* UIFont+Extension.swift */,
-				4610880B28B2134900616985 /* UIColor+Extension.swift */,
-				4610880F28B215B100616985 /* UIImage+Extension.swift */,
 				4610881328B21BA400616985 /* NSAttributedString+Extension.swift */,
 				4610881728B21C0700616985 /* Optional+Extension.swift */,
+				4610880B28B2134900616985 /* UIColor+Extension.swift */,
+				461087EC28B2100500616985 /* UIFont+Extension.swift */,
+				4610880F28B215B100616985 /* UIImage+Extension.swift */,
 			);
-			path = Extensions;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		461087EE28B2118E00616985 /* Resources */ = {
@@ -186,21 +190,22 @@
 		4610880828B2123600616985 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				4610880928B2124600616985 /* LifeCycles */,
-				461087EB28B20FFC00616985 /* Extensions */,
+				461087EB28B20FFC00616985 /* Extension */,
+				B053B0B228B354C6008B751E /* Flow */,
+				4610880928B2124600616985 /* LifeCycle */,
 				4630C80828B23A110081EF94 /* Rx */,
 				462F46E028AFA1AE00B5BA68 /* ViewController */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		4610880928B2124600616985 /* LifeCycles */ = {
+		4610880928B2124600616985 /* LifeCycle */ = {
 			isa = PBXGroup;
 			children = (
 				46F9A0C228AF9C2600D43341 /* AppDelegate.swift */,
 				46F9A0C428AF9C2600D43341 /* SceneDelegate.swift */,
 			);
-			path = LifeCycles;
+			path = LifeCycle;
 			sourceTree = "<group>";
 		};
 		4610880A28B2125300616985 /* Storyboards */ = {
@@ -258,8 +263,8 @@
 		4630C80828B23A110081EF94 /* Rx */ = {
 			isa = PBXGroup;
 			children = (
-				4630C80928B23A1C0081EF94 /* UIViewController+Rx.swift */,
 				4630C80B28B240120081EF94 /* UITextField+Rx.swift */,
+				4630C80928B23A1C0081EF94 /* UIViewController+Rx.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -287,12 +292,20 @@
 		46F9A0C128AF9C2600D43341 /* CloneBankSalad */ = {
 			isa = PBXGroup;
 			children = (
-				4610880828B2123600616985 /* Sources */,
-				461087EE28B2118E00616985 /* Resources */,
-				46F9A0C628AF9C2600D43341 /* ViewController.swift */,
 				46F9A0D028AF9C2700D43341 /* Info.plist */,
+				461087EE28B2118E00616985 /* Resources */,
+				4610880828B2123600616985 /* Sources */,
+				46F9A0C628AF9C2600D43341 /* ViewController.swift */,
 			);
 			path = CloneBankSalad;
+			sourceTree = "<group>";
+		};
+		B053B0B228B354C6008B751E /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				B053B0B328B3551A008B751E /* AppFlow.swift */,
+			);
+			path = Flow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +367,7 @@
 				462F46E828AFA4A000B5BA68 /* ReactorKit */,
 				461087E828B1F6EE00616985 /* SnapKit */,
 				4630C80628B227770081EF94 /* IQKeyboardManagerSwift */,
+				B053B0B628B3555F008B751E /* RxFlow */,
 			);
 			productName = CloneBankSalad;
 			productReference = 46F9A0BF28AF9C2600D43341 /* CloneBankSalad.app */;
@@ -396,6 +410,7 @@
 				462F46E728AFA4A000B5BA68 /* XCRemoteSwiftPackageReference "ReactorKit" */,
 				461087E728B1F6EE00616985 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				4630C80528B227770081EF94 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				B053B0B528B3555F008B751E /* XCRemoteSwiftPackageReference "RxFlow" */,
 			);
 			productRefGroup = 46F9A0C028AF9C2600D43341 /* Products */;
 			projectDirPath = "";
@@ -484,6 +499,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B053B0B428B3551A008B751E /* AppFlow.swift in Sources */,
 				4610881428B21BA400616985 /* NSAttributedString+Extension.swift in Sources */,
 				4610880C28B2134900616985 /* UIColor+Extension.swift in Sources */,
 				461087ED28B2100500616985 /* UIFont+Extension.swift in Sources */,
@@ -738,7 +754,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -766,7 +782,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -844,6 +860,14 @@
 				minimumVersion = 6.5.0;
 			};
 		};
+		B053B0B528B3555F008B751E /* XCRemoteSwiftPackageReference "RxFlow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxFlow.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -876,6 +900,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4630C80528B227770081EF94 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		B053B0B628B3555F008B751E /* RxFlow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B053B0B528B3555F008B751E /* XCRemoteSwiftPackageReference "RxFlow" */;
+			productName = RxFlow;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

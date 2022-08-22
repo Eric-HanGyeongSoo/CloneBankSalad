@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 import ReactorKit
 import RxSwift
+import RxRelay
+import RxFlow
 
 class IdentifyingViewController: UIViewController, View {
   // MARK: UI Components
@@ -86,7 +88,7 @@ class IdentifyingViewController: UIViewController, View {
 }
 
 
-class IdentifyingViewReactor: Reactor {
+class IdentifyingViewReactor: Reactor, Stepper {
   enum Action {
     case setName(_ name: String)
   }
@@ -100,6 +102,7 @@ class IdentifyingViewReactor: Reactor {
   }
   
   let initialState = State()
+  let steps = PublishRelay<Step>()
   
   func mutate(action: Action) -> Observable<Mutation> {
     switch action {
