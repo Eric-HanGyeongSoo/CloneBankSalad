@@ -215,7 +215,15 @@ class RegistrationNumberTextFieldView: UIView, View {
 
 // MARK: RegistrationNumberTextFieldView + Rx
 extension Reactive where Base == RegistrationNumberTextFieldView {
+  var birthDate: Observable<String> {
+    guard let reactor = base.reactor else { return .empty() }
+    return reactor.state.map { $0.birthDate }
+  }
   
+  var gender: Observable<String> {
+    guard let reactor = base.reactor else { return .empty() }
+    return reactor.state.map { $0.gender }
+  }
 }
 
 // MARK: Reactor

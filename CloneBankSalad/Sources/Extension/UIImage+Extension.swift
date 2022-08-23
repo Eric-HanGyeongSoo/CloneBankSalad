@@ -13,6 +13,7 @@ extension UIImage {
     case onboarding_clear
     case onboarding_secure_star
     case onboarding_hyphen
+    case onboarding_arrow_down
   }
   
   static func assetImage(_ image: AssetImage) -> UIImage {

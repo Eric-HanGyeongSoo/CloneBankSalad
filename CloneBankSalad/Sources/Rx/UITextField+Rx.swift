@@ -30,4 +30,12 @@ extension Reactive where Base == UITextField {
       }
     }
   }
+  
+  var resignFirstResponder: Binder<Void> {
+    return Binder(self.base) { textField, _ in
+      if textField.canResignFirstResponder {
+        textField.resignFirstResponder()
+      }
+    }
+  }
 }

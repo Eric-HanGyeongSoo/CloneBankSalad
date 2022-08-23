@@ -46,6 +46,12 @@ class IdentifyingViewController: UIViewController, View {
     return view
   }()
   
+  lazy var phoneNumberTextField: PhoneNumberTextFieldView = {
+    let view = PhoneNumberTextFieldView(frame: .zero)
+    view.reactor = PhoneNumberTextFieldReactor()
+    return view
+  }()
+  
   // MARK: Properties
   var disposeBag = DisposeBag()
   
@@ -62,6 +68,7 @@ class IdentifyingViewController: UIViewController, View {
     self.view.addSubview(subtitleLabel)
     self.view.addSubview(nameTextField)
     self.view.addSubview(registrationNumberTextField)
+    self.view.addSubview(phoneNumberTextField)
     titleLabel.snp.makeConstraints { make in
       make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(20)
       make.top.equalTo(self.view.safeAreaLayoutGuide).offset(56)
@@ -80,6 +87,11 @@ class IdentifyingViewController: UIViewController, View {
       make.trailing.equalToSuperview().offset(-20)
       make.top.equalTo(nameTextField.snp.bottom).offset(12)
     }
+    phoneNumberTextField.snp.makeConstraints { make in
+      make.leading.equalToSuperview().offset(20)
+      make.trailing.equalToSuperview().offset(-20)
+      make.top.equalTo(registrationNumberTextField.snp.bottom).offset(12)
+    }
   }
   
   // MARK: Binding
@@ -96,6 +108,30 @@ class IdentifyingViewController: UIViewController, View {
       .map { Reactor.Action.setName($0) }
       .bind(to: reactor.action)
       .disposed(by: disposeBag)
+    
+    registrationNumberTextField.rx.birthDate
+      .distinctUntilChanged()
+      .map { Reactor.Action.setBirthDate($0) }
+      .bind(to: reactor.action)
+      .disposed(by: disposeBag)
+    
+    registrationNumberTextField.rx.gender
+      .distinctUntilChanged()
+      .map { Reactor.Action.setGender($0) }
+      .bind(to: reactor.action)
+      .disposed(by: disposeBag)
+    
+    phoneNumberTextField.rx.selectedCarrier
+      .compactMap { $0 }
+      .map { Reactor.Action.setCarrier($0) }
+      .bind(to: reactor.action)
+      .disposed(by: disposeBag)
+    
+    phoneNumberTextField.rx.phoneNumber
+      .distinctUntilChanged()
+      .map { Reactor.Action.setPhoneNumber($0) }
+      .bind(to: reactor.action)
+      .disposed(by: disposeBag)
   }
 }
 
@@ -103,14 +139,26 @@ class IdentifyingViewController: UIViewController, View {
 class IdentifyingViewReactor: Reactor, Stepper {
   enum Action {
     case setName(_ name: String)
+    case setBirthDate(_ birthDate: String)
+    case setGender(_ gender: String)
+    case setCarrier(_ carrier: MobileCarrier)
+    case setPhoneNumber(_ phone: String)
   }
   
   enum Mutation {
     case updateName(_ name: String)
+    case updateBirthDate(_ birthDate: String)
+    case updateGender(_ gender: String)
+    case updateCarrier(_ carrier: MobileCarrier)
+    case updatePhoneNumber(_ phone: String)
   }
   
   struct State {
     var name = ""
+    var birthDate = ""
+    var gender = ""
+    var phoneNumber = ""
+    var mobileCarrier: MobileCarrier?
   }
   
   let initialState = State()
@@ -120,6 +168,14 @@ class IdentifyingViewReactor: Reactor, Stepper {
     switch action {
     case .setName(let name):
       return .just(.updateName(name))
+    case .setBirthDate(let birthDate):
+      return .just(.updateBirthDate(birthDate))
+    case .setGender(let gender):
+      return .just(.updateGender(gender))
+    case .setCarrier(let carrier):
+      return .just(.updateCarrier(carrier))
+    case .setPhoneNumber(let phone):
+      return .just(.updatePhoneNumber(phone))
     }
   }
   
@@ -129,6 +185,14 @@ class IdentifyingViewReactor: Reactor, Stepper {
     switch mutation {
     case .updateName(let name):
       newState.name = name
+    case .updateBirthDate(let birthDate):
+      newState.birthDate = birthDate
+    case .updateGender(let gender):
+      newState.gender = gender
+    case .updateCarrier(let carrier):
+      newState.mobileCarrier = carrier
+    case .updatePhoneNumber(let phone):
+      newState.phoneNumber = phone
     }
     
     return newState

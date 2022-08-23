@@ -58,6 +58,9 @@
 		46F9A0CA28AF9C2600D43341 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46F9A0C828AF9C2600D43341 /* Main.storyboard */; };
 		46F9A0CC28AF9C2700D43341 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46F9A0CB28AF9C2700D43341 /* Assets.xcassets */; };
 		46F9A0CF28AF9C2700D43341 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46F9A0CD28AF9C2700D43341 /* LaunchScreen.storyboard */; };
+		B046A44628B46D8A001738DF /* PhoneNumberTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B046A44528B46D8A001738DF /* PhoneNumberTextFieldView.swift */; };
+		B046A44828B470D4001738DF /* CarrierSelectionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B046A44728B470D4001738DF /* CarrierSelectionButtonView.swift */; };
+		B046A44B28B473B7001738DF /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B046A44A28B473B7001738DF /* Common.swift */; };
 		B053B0B428B3551A008B751E /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053B0B328B3551A008B751E /* AppFlow.swift */; };
 		B053B0B728B3555F008B751E /* RxFlow in Frameworks */ = {isa = PBXBuildFile; productRef = B053B0B628B3555F008B751E /* RxFlow */; };
 		B053B0BB28B35BB3008B751E /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053B0BA28B35BB3008B751E /* OnboardingFlow.swift */; };
@@ -111,6 +114,9 @@
 		46F9A0CB28AF9C2700D43341 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46F9A0CE28AF9C2700D43341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46F9A0D028AF9C2700D43341 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B046A44528B46D8A001738DF /* PhoneNumberTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTextFieldView.swift; sourceTree = "<group>"; };
+		B046A44728B470D4001738DF /* CarrierSelectionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierSelectionButtonView.swift; sourceTree = "<group>"; };
+		B046A44A28B473B7001738DF /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		B053B0B328B3551A008B751E /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		B053B0BA28B35BB3008B751E /* OnboardingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
 		B0D3C14628B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationNumberTextFieldView.swift; sourceTree = "<group>"; };
@@ -153,6 +159,8 @@
 			children = (
 				461087E528B1F59700616985 /* NameTextFieldView.swift */,
 				B0D3C14628B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift */,
+				B046A44528B46D8A001738DF /* PhoneNumberTextFieldView.swift */,
+				B046A44728B470D4001738DF /* CarrierSelectionButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,6 +203,7 @@
 		4610880828B2123600616985 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B046A44928B473AA001738DF /* Model */,
 				461087EB28B20FFC00616985 /* Extension */,
 				B053B0B228B354C6008B751E /* Flow */,
 				4610880928B2124600616985 /* LifeCycle */,
@@ -303,6 +312,14 @@
 				46F9A0C628AF9C2600D43341 /* ViewController.swift */,
 			);
 			path = CloneBankSalad;
+			sourceTree = "<group>";
+		};
+		B046A44928B473AA001738DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B046A44A28B473B7001738DF /* Common.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B053B0B228B354C6008B751E /* Flow */ = {
@@ -505,12 +522,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B046A44628B46D8A001738DF /* PhoneNumberTextFieldView.swift in Sources */,
 				B053B0B428B3551A008B751E /* AppFlow.swift in Sources */,
 				4610881428B21BA400616985 /* NSAttributedString+Extension.swift in Sources */,
 				4610880C28B2134900616985 /* UIColor+Extension.swift in Sources */,
+				B046A44B28B473B7001738DF /* Common.swift in Sources */,
 				461087ED28B2100500616985 /* UIFont+Extension.swift in Sources */,
 				461087E628B1F59700616985 /* NameTextFieldView.swift in Sources */,
 				4610881028B215B100616985 /* UIImage+Extension.swift in Sources */,
+				B046A44828B470D4001738DF /* CarrierSelectionButtonView.swift in Sources */,
 				46F9A0C728AF9C2600D43341 /* ViewController.swift in Sources */,
 				46F9A0C328AF9C2600D43341 /* AppDelegate.swift in Sources */,
 				B053B0BB28B35BB3008B751E /* OnboardingFlow.swift in Sources */,
