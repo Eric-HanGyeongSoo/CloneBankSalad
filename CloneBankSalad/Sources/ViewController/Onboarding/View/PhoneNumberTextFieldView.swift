@@ -129,7 +129,6 @@ class PhoneNumberTextFieldView: UIView, View {
     
     textStream
       .map { Reactor.Action.updatePhoneNumber($0) }
-      .debug()
       .bind(to: reactor.action)
       .disposed(by: disposeBag)
     
