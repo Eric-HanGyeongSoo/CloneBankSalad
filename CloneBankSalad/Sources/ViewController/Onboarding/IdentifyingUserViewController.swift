@@ -52,18 +52,36 @@ class IdentifyingViewController: UIViewController, View {
     return view
   }()
   
+  
   // MARK: Properties
   var disposeBag = DisposeBag()
+  var didSetupConstraints = false
   
+  
+  // MARK: Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.view.backgroundColor = .white
     setupViews()
-    self.reactor = IdentifyingViewReactor()
+    self.view.setNeedsUpdateConstraints()
   }
+  
+  override func updateViewConstraints() {
+    if !didSetupConstraints {
+      setupConstraints()
+      didSetupConstraints = true
+    }
+    super.updateViewConstraints()
+  }
+  
   
   // MARK: Setup Views
   func setupViews() {
+    self.view.backgroundColor = .white
+  }
+  
+  
+  // MARK: Layout Views
+  func setupConstraints() {
     self.view.addSubview(titleLabel)
     self.view.addSubview(subtitleLabel)
     self.view.addSubview(nameTextField)

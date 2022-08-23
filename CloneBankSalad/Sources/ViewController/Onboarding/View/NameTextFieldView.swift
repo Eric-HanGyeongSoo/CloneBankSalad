@@ -40,18 +40,33 @@ class NameTextFieldView: UIView, View {
     return button
   }()
   
+  
   // MARK: Properties
   var disposeBag = DisposeBag()
+  var didSetupConstraints = false
   
+  // MARK: Life Cycle
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupViews()
+    self.setNeedsUpdateConstraints()
   }
   
   required init?(coder: NSCoder) {
     super.init(coder: coder)
     setupViews()
+    self.setNeedsUpdateConstraints()
   }
+  
+  
+  override func updateConstraints() {
+    if !didSetupConstraints {
+      self.setupConstraints()
+      didSetupConstraints = true
+    }
+    super.updateConstraints()
+  }
+  
   
   // MARK: Setup Views
   func setupViews() {
@@ -59,7 +74,11 @@ class NameTextFieldView: UIView, View {
     self.layer.borderWidth = 0.7
     self.layer.borderColor = UIColor.assetColor(.co_e9eaee).cgColor
     self.backgroundColor = UIColor.assetColor(.co_fafafa)
-    
+  }
+  
+  
+  // MARK: Layout Views
+  func setupConstraints() {
     self.addSubview(label)
     self.addSubview(textField)
     self.addSubview(clearButton)
@@ -70,13 +89,13 @@ class NameTextFieldView: UIView, View {
     }
     textField.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(16)
-      make.trailing.equalTo(clearButton.snp.leading).offset(-16)
       make.top.equalTo(label.snp.bottom).offset(2)
       make.bottom.equalToSuperview().offset(-12)
       make.centerY.equalTo(clearButton.snp.centerY)
       make.height.equalTo(28)
     }
     clearButton.snp.makeConstraints { make in
+      make.leading.equalTo(textField.snp.trailing).offset(16)
       make.trailing.equalToSuperview().offset(-16)
       make.height.width.equalTo(17)
     }
