@@ -16,23 +16,21 @@ class RegistrationNumberTextFieldView: UIView, View {
   // MARK: View Components
   lazy var label: UILabel = {
     let label = UILabel()
-    let attributedString = NSMutableAttributedString(string: "주민등록번호 7자리")
-    attributedString.setFont(UIFont.notoSans.regular.font(size: 13))
-    attributedString.setColor(UIColor.assetColor(.co_656e77))
-    attributedString.setLetterSpacing(-0.65)
-    label.attributedText = attributedString
+    label.text = "주민등록번호 7자리"
+    label.font = UIFont.appleSDGothicNeo(size: 12)
+    label.textColor = UIColor.assetColor(.co_656e77)
     return label
   }()
   
   lazy var birthDateTextField: UITextField = {
     let textField = UITextField()
     let attributedPlaceholder = NSMutableAttributedString(string: "생년월일")
-    attributedPlaceholder.setFont(UIFont.notoSans.regular.font(size: 19))
-    attributedPlaceholder.setColor(UIColor.assetColor(.co_878f9c))
-    attributedPlaceholder.setLetterSpacing(-0.46)
+    attributedPlaceholder.setFont(UIFont.appleSDGothicNeo(size: 18))
+    attributedPlaceholder.setColor(UIColor.assetColor(.co_848894))
+    attributedPlaceholder.setLetterSpacing(-0.09)
     textField.attributedPlaceholder = attributedPlaceholder
-    textField.font = UIFont.notoSans.regular.font(size: 19)
-    textField.textColor = UIColor.assetColor(.co_111111)
+    textField.font = UIFont.appleSDGothicNeo(size: 18)
+    textField.textColor = UIColor.assetColor(.co_0f0f0f)
     textField.keyboardType = .numberPad
     return textField
   }()
@@ -40,11 +38,9 @@ class RegistrationNumberTextFieldView: UIView, View {
   lazy var genderTextField: UITextField = {
     let textField = UITextField()
     let attributedPlaceholder = NSMutableAttributedString(string: "0")
-    attributedPlaceholder.setFont(UIFont.notoSans.regular.font(size: 19))
-    attributedPlaceholder.setColor(UIColor.assetColor(.co_878f9c))
+    attributedPlaceholder.setFont(UIFont.pretendard(size: 18, weight: .medium))
+    attributedPlaceholder.setColor(UIColor.assetColor(.co_848894))
     textField.attributedPlaceholder = attributedPlaceholder
-    textField.font = UIFont.notoSans.regular.font(size: 19)
-    textField.textColor = UIColor.assetColor(.co_111111)
     textField.keyboardType = .numberPad
     return textField
   }()
@@ -66,7 +62,7 @@ class RegistrationNumberTextFieldView: UIView, View {
   lazy var textFieldStackView: UIStackView = {
     let stackView = UIStackView()
     stackView.axis = .horizontal
-    stackView.spacing = 25
+    stackView.spacing = 21
     stackView.alignment = .center
     let hyphenImageView = UIImageView()
     hyphenImageView.image = UIImage.assetImage(.onboarding_hyphen)
@@ -115,13 +111,15 @@ class RegistrationNumberTextFieldView: UIView, View {
     self.addSubview(textFieldStackView)
     label.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(16)
-      make.top.equalToSuperview().offset(10)
+      make.top.equalToSuperview().offset(12)
+      make.height.equalTo(15)
     }
     textFieldStackView.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(16)
       make.trailing.equalToSuperview().offset(-16)
-      make.top.equalTo(label.snp.bottom).offset(2)
+      make.top.equalTo(label.snp.bottom).offset(8)
       make.bottom.equalToSuperview().offset(-12)
+      make.height.equalTo(21)
     }
     birthDateTextField.snp.makeConstraints { make in
       make.width.equalTo(genderTextFieldStackView)
@@ -145,8 +143,16 @@ class RegistrationNumberTextFieldView: UIView, View {
       .disposed(by: disposeBag)
     
     birthDateStream
+      .observe(on: ConcurrentDispatchQueueScheduler(qos: .default))
+      .map { birthDate -> NSMutableAttributedString in
+        let attributed = NSMutableAttributedString(string: birthDate)
+        attributed.setFont(UIFont.pretendard(size: 18, weight: .medium))
+        attributed.setColor(UIColor.assetColor(.co_0f0f0f))
+        attributed.setLetterSpacing(0.45)
+        return attributed
+      }
       .asDriver(onErrorDriveWith: .empty())
-      .drive(birthDateTextField.rx.text)
+      .drive(birthDateTextField.rx.attributedText)
       .disposed(by: disposeBag)
     
     birthDateStream
@@ -171,8 +177,16 @@ class RegistrationNumberTextFieldView: UIView, View {
       .disposed(by: disposeBag)
     
     genderStream
+      .observe(on: ConcurrentDispatchQueueScheduler(qos: .default))
+      .map { gender -> NSMutableAttributedString in
+        let attributed = NSMutableAttributedString(string: gender)
+        attributed.setFont(UIFont.pretendard(size: 18, weight: .medium))
+        attributed.setColor(UIColor.assetColor(.co_0f0f0f))
+        attributed.setLetterSpacing(0.45)
+        return attributed
+      }
       .asDriver(onErrorDriveWith: .empty())
-      .drive(genderTextField.rx.text)
+      .drive(genderTextField.rx.attributedText)
       .disposed(by: disposeBag)
     
     genderStream

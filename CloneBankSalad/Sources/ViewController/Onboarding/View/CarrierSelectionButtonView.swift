@@ -17,11 +17,9 @@ class CarrierSelectionButtonView: UIView, View {
   // MARK: View Components
   lazy var label: UILabel = {
     let label = UILabel()
-    let attributedString = NSMutableAttributedString(string: "통신사")
-    attributedString.setFont(UIFont.notoSans.regular.font(size: 13))
-    attributedString.setColor(UIColor.assetColor(.co_010207))
-    attributedString.setLetterSpacing(-0.65)
-    label.attributedText = attributedString
+    label.text = "통신사"
+    label.font = UIFont.appleSDGothicNeo(size: 12)
+    label.textColor = UIColor.assetColor(.co_010207)
     return label
   }()
   
@@ -75,9 +73,11 @@ class CarrierSelectionButtonView: UIView, View {
     self.addSubview(image)
     label.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(8)
-      make.top.equalToSuperview().offset(2)
-      make.bottom.equalToSuperview().offset(-2)
+      make.top.equalToSuperview().offset(5)
+      make.bottom.equalToSuperview().offset(-3)
+      make.height.equalTo(15)
     }
+    label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
     image.snp.makeConstraints { make in
       make.leading.equalTo(label.snp.trailing).offset(3)
       make.trailing.equalToSuperview().offset(-10)
@@ -94,17 +94,9 @@ class CarrierSelectionButtonView: UIView, View {
     // State
     reactor.pulse(\.$selectedCarrier)
       .distinctUntilChanged()
-      .observe(on: ConcurrentDispatchQueueScheduler(qos: .default))
       .map { $0?.rawValue ?? "통신사" }
-      .map { text -> NSMutableAttributedString in
-        let attributedString = NSMutableAttributedString(string: text)
-        attributedString.setFont(UIFont.notoSans.regular.font(size: 13))
-        attributedString.setColor(UIColor.assetColor(.co_010207))
-        attributedString.setLetterSpacing(-0.65)
-        return attributedString
-      }
       .asDriver(onErrorDriveWith: .empty())
-      .drive(label.rx.attributedText)
+      .drive(label.rx.text)
       .disposed(by: disposeBag)
     
     // View

@@ -17,7 +17,7 @@ class IdentifyingViewController: UIViewController, View {
   lazy var titleLabel: UILabel = {
     let label = UILabel()
     let attributedString = NSMutableAttributedString(string: "휴대폰 본인인증")
-    attributedString.setFont(UIFont.notoSans.bold.font(size: 25))
+    attributedString.setFont(UIFont.appleSDGothicNeo(size: 25, weight: .bold))
     attributedString.setColor(UIColor.assetColor(.co_111111))
     attributedString.setLetterSpacing(-0.25)
     label.attributedText = attributedString
@@ -27,7 +27,7 @@ class IdentifyingViewController: UIViewController, View {
   lazy var subtitleLabel: UILabel = {
     let label = UILabel()
     let attributedString = NSMutableAttributedString(string: "회원여부 확인 및 가입을 진행합니다.")
-    attributedString.setFont(UIFont.notoSans.regular.font(size: 17))
+    attributedString.setFont(UIFont.appleSDGothicNeo(size: 17))
     attributedString.setColor(UIColor.assetColor(.co_656d75))
     attributedString.setLetterSpacing(-0.68)
     label.attributedText = attributedString
@@ -50,6 +50,17 @@ class IdentifyingViewController: UIViewController, View {
     let view = PhoneNumberTextFieldView(frame: .zero)
     view.reactor = PhoneNumberTextFieldReactor()
     return view
+  }()
+  
+  lazy var textFieldStackView: UIStackView = {
+    let stackView = UIStackView()
+    stackView.axis = .vertical
+    stackView.alignment = .fill
+    stackView.spacing = 12
+    textFieldStackView.addArrangedSubview(nameTextField)
+    textFieldStackView.addArrangedSubview(registrationNumberTextField)
+    textFieldStackView.addArrangedSubview(phoneNumberTextField)
+    return stackView
   }()
   
   
@@ -84,31 +95,20 @@ class IdentifyingViewController: UIViewController, View {
   func setupConstraints() {
     self.view.addSubview(titleLabel)
     self.view.addSubview(subtitleLabel)
-    self.view.addSubview(nameTextField)
-    self.view.addSubview(registrationNumberTextField)
-    self.view.addSubview(phoneNumberTextField)
+    self.view.addSubview(textFieldStackView)
+    
     titleLabel.snp.makeConstraints { make in
       make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(20)
-      make.top.equalTo(self.view.safeAreaLayoutGuide).offset(56)
+      make.top.equalTo(self.view.safeAreaLayoutGuide).offset(67)
     }
     subtitleLabel.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(20)
-      make.top.equalTo(titleLabel.snp.bottom).offset(8)
+      make.top.equalTo(titleLabel.snp.bottom).offset(14)
     }
-    nameTextField.snp.makeConstraints { make in
+    textFieldStackView.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(20)
       make.trailing.equalToSuperview().offset(-20)
-      make.top.equalTo(subtitleLabel.snp.bottom).offset(25)
-    }
-    registrationNumberTextField.snp.makeConstraints { make in
-      make.leading.equalToSuperview().offset(20)
-      make.trailing.equalToSuperview().offset(-20)
-      make.top.equalTo(nameTextField.snp.bottom).offset(12)
-    }
-    phoneNumberTextField.snp.makeConstraints { make in
-      make.leading.equalToSuperview().offset(20)
-      make.trailing.equalToSuperview().offset(-20)
-      make.top.equalTo(registrationNumberTextField.snp.bottom).offset(12)
+      make.top.equalTo(subtitleLabel.snp.bottom).offset(30)
     }
   }
   

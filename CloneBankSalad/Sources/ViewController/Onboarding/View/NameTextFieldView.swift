@@ -17,7 +17,7 @@ class NameTextFieldView: UIView, View {
   lazy var label: UILabel = {
     let label = UILabel()
     label.text = "이름"
-    label.font = UIFont.notoSans.regular.font(size: 13)
+    label.font = UIFont.appleSDGothicNeo(size: 12)
     label.textColor = UIColor.assetColor(.co_656e77)
     return label
   }()
@@ -25,12 +25,12 @@ class NameTextFieldView: UIView, View {
   lazy var textField: UITextField = {
     let textField = UITextField()
     let attributedPlaceholder = NSMutableAttributedString("이름 입력")
-    attributedPlaceholder.setFont(UIFont.notoSans.regular.font(size: 19))
-    attributedPlaceholder.setColor(UIColor.assetColor(.co_878f9c))
-    attributedPlaceholder.setLetterSpacing(-0.46)
+    attributedPlaceholder.setFont(UIFont.appleSDGothicNeo(size: 18))
+    attributedPlaceholder.setColor(UIColor.assetColor(.co_848894))
+    attributedPlaceholder.setLetterSpacing(-0.09)
     textField.attributedPlaceholder = attributedPlaceholder
-    textField.font = UIFont.notoSans.regular.font(size: 19)
-    textField.textColor = UIColor.assetColor(.co_111111)
+    textField.font = UIFont.appleSDGothicNeo(size: 18)
+    textField.textColor = UIColor.assetColor(.co_2b3034)
     return textField
   }()
   
@@ -84,19 +84,19 @@ class NameTextFieldView: UIView, View {
     self.addSubview(clearButton)
     label.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(16)
-      make.top.equalToSuperview().offset(9)
-      make.height.equalTo(19)
+      make.top.equalToSuperview().offset(12)
+      make.height.equalTo(15)
     }
     textField.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(16)
-      make.top.equalTo(label.snp.bottom).offset(2)
+      make.top.equalTo(label.snp.bottom).offset(8)
       make.bottom.equalToSuperview().offset(-12)
-      make.centerY.equalTo(clearButton.snp.centerY)
-      make.height.equalTo(28)
+      make.height.equalTo(21)
     }
     clearButton.snp.makeConstraints { make in
       make.leading.equalTo(textField.snp.trailing).offset(16)
       make.trailing.equalToSuperview().offset(-16)
+      make.centerY.equalTo(textField)
       make.height.width.equalTo(17)
     }
   }
@@ -134,8 +134,16 @@ class NameTextFieldView: UIView, View {
     }).disposed(by: disposeBag)
     
     reactor.state.map { $0.name }
+      .observe(on: ConcurrentDispatchQueueScheduler(qos: .default))
+      .map { name -> NSMutableAttributedString in
+        let attributed = NSMutableAttributedString(string: name)
+        attributed.setFont(UIFont.appleSDGothicNeo(size: 18))
+        attributed.setColor(UIColor.assetColor(.co_2b3034))
+        attributed.setLetterSpacing(-0.09)
+        return attributed
+      }
       .asDriver(onErrorDriveWith: .empty())
-      .drive(textField.rx.text)
+      .drive(textField.rx.attributedText)
       .disposed(by: disposeBag)
   }
 }

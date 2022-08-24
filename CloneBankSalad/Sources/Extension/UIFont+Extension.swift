@@ -9,16 +9,35 @@ import Foundation
 import UIKit
 
 extension UIFont {
-  enum notoSans: String {
-    case thin = "NotoSansKR-Thin"
-    case regular = "NotoSansKR-Regular"
-    case medium = "NotoSansKR-Medium"
-    case light = "NotoSansKR-Light"
-    case bold = "NotoSansKR-Bold"
-    case black = "NotoSansKR-Black"
-    
-    public func font(size: CGFloat) -> UIFont {
-      return UIFont(name: self.rawValue, size: size)!
-    }
+  enum AppleSDGothicNeo: String {
+    case ultraLight = "AppleSDGothicNeo-UltraLight"
+    case light = "AppleSDGothicNeo-Light"
+    case thin = "AppleSDGothicNeo-Thin"
+    case medium = "AppleSDGothicNeo-Medium"
+    case regular = "AppleSDGothicNeo-Regular"
+    case semiBold = "AppleSDGothicNeo-SemiBold"
+    case bold = "AppleSDGothicNeo-Bold"
+  }
+  
+  static func appleSDGothicNeo(size: CGFloat, weight: AppleSDGothicNeo? = .regular) -> UIFont {
+    let weight = weight ?? .regular
+    return UIFont(name: weight.rawValue, size: size)!
+  }
+}
+
+extension UIFont {
+  enum Pretendard: String {
+    case extraLight = "Pretendard-ExtraLight"
+    case light = "Pretendard-Light"
+    case thin = "Pretendard-Thin"
+    case medium = "Pretendard-Medium"
+    case regular = "Pretendard-Regular"
+    case semiBold = "Pretendard-SemiBold"
+    case bold = "Pretendard-Bold"
+  }
+  
+  static func pretendard(size: CGFloat, weight: Pretendard? = .regular) -> UIFont {
+    let weight = weight ?? .regular
+    return UIFont(name: weight.rawValue, size: size)!
   }
 }

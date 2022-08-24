@@ -17,11 +17,9 @@ class PhoneNumberTextFieldView: UIView, View {
   // MARK: View Components
   lazy var label: UILabel = {
     let label = UILabel()
-    let attributedString = NSMutableAttributedString(string: "휴대폰번호")
-    attributedString.setFont(UIFont.notoSans.regular.font(size: 13))
-    attributedString.setColor(UIColor.assetColor(.co_656e77))
-    attributedString.setLetterSpacing(-0.65)
-    label.attributedText = attributedString
+    label.text = "휴대폰번호"
+    label.font = UIFont.appleSDGothicNeo(size: 12)
+    label.textColor = UIColor.assetColor(.co_656e77)
     return label
   }()
   
@@ -40,11 +38,11 @@ class PhoneNumberTextFieldView: UIView, View {
   lazy var textField: UITextField = {
     let textField = UITextField()
     let attributedPlaceholder = NSMutableAttributedString(string: "휴대폰번호 입력")
-    attributedPlaceholder.setFont(UIFont.notoSans.regular.font(size: 19))
-    attributedPlaceholder.setColor(UIColor.assetColor(.co_878f9c))
-    attributedPlaceholder.setLetterSpacing(-0.46)
+    attributedPlaceholder.setFont(UIFont.appleSDGothicNeo(size: 18))
+    attributedPlaceholder.setColor(UIColor.assetColor(.co_848894))
+    attributedPlaceholder.setLetterSpacing(-0.09)
     textField.attributedPlaceholder = attributedPlaceholder
-    textField.font = UIFont.notoSans.regular.font(size: 19)
+    textField.font = UIFont.appleSDGothicNeo(size: 19)
     textField.textColor = UIColor.assetColor(.co_111111)
     textField.keyboardType = .numberPad
     return textField
@@ -97,22 +95,24 @@ class PhoneNumberTextFieldView: UIView, View {
     self.addSubview(clearButton)
     label.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(16)
-      make.top.equalToSuperview().offset(10)
+      make.top.equalToSuperview().offset(12)
+      make.height.equalTo(15)
     }
     carrierSelectionButton.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(16)
-      make.top.equalTo(label.snp.bottom).offset(5)
+      make.top.equalTo(label.snp.bottom).offset(6)
       make.bottom.equalToSuperview().offset(-12)
     }
     textField.snp.makeConstraints { make in
       make.leading.equalTo(carrierSelectionButton.snp.trailing).offset(8)
       make.centerY.equalTo(carrierSelectionButton)
+      make.height.equalTo(21)
     }
     clearButton.snp.makeConstraints { make in
       make.leading.equalTo(textField.snp.trailing).offset(12)
       make.trailing.equalToSuperview().offset(-16)
       make.centerY.equalTo(carrierSelectionButton)
-      make.width.equalTo(17)
+      make.width.height.equalTo(17)
     }
   }
   
@@ -169,8 +169,15 @@ class PhoneNumberTextFieldView: UIView, View {
       .compactMap { [weak self] text in
         self?.formatPhoneNumber(text)
       }
+      .map { phoneNumber -> NSMutableAttributedString in
+        let attributed = NSMutableAttributedString(string: phoneNumber)
+        attributed.setFont(UIFont.pretendard(size: 18, weight: .medium))
+        attributed.setColor(UIColor.assetColor(.co_30363e))
+        attributed.setLetterSpacing(0.27)
+        return attributed
+      }
       .asDriver(onErrorDriveWith: .empty())
-      .drive(textField.rx.text)
+      .drive(textField.rx.attributedText)
       .disposed(by: disposeBag)
     
     // View
