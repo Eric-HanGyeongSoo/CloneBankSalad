@@ -55,7 +55,7 @@ class PhoneNumberTextFieldView: UIView, View {
   // MARK: Properties
   var disposeBag = DisposeBag()
   var didSetupConstraints = false
-
+  
   
   // MARK: Life Cycle
   override init(frame: CGRect) {
@@ -180,7 +180,13 @@ class PhoneNumberTextFieldView: UIView, View {
       .drive(textField.rx.attributedText)
       .disposed(by: disposeBag)
     
-    // View
+    
+    // Notification
+    NotificationCenter.default.rx.notification(.panModalDidDismiss)
+      .map { _ in }
+      .asDriver(onErrorDriveWith: .empty())
+      .drive(textField.rx.becomeFirstResponder)
+      .disposed(by: disposeBag)
   }
   
   private func formatPhoneNumber(_ phoneNumber: String) -> String {
@@ -201,8 +207,12 @@ class PhoneNumberTextFieldView: UIView, View {
 
 // MARK: PhoneNumberTextFieldView + Rx
 extension Reactive where Base == PhoneNumberTextFieldView {
-  var selectedCarrier: Observable<MobileCarrier?> {
+  var selectedCarrier: Binder<MobileCarrier> {
     return base.carrierSelectionButton.rx.selectedCarrier
+  }
+  
+  var carrierButtonTap: ControlEvent<Void> {
+    return base.carrierSelectionButton.rx.tap
   }
   
   var phoneNumber: Observable<String> {

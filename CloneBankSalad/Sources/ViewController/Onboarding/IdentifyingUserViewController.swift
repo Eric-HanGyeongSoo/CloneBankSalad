@@ -57,9 +57,9 @@ class IdentifyingViewController: UIViewController, View {
     stackView.axis = .vertical
     stackView.alignment = .fill
     stackView.spacing = 12
-    textFieldStackView.addArrangedSubview(nameTextField)
-    textFieldStackView.addArrangedSubview(registrationNumberTextField)
-    textFieldStackView.addArrangedSubview(phoneNumberTextField)
+    stackView.addArrangedSubview(nameTextField)
+    stackView.addArrangedSubview(registrationNumberTextField)
+    stackView.addArrangedSubview(phoneNumberTextField)
     return stackView
   }()
   
@@ -116,7 +116,8 @@ class IdentifyingViewController: UIViewController, View {
   func bind(reactor: IdentifyingViewReactor) {
     // Action
     self.rx.viewDidAppear
-      .asDriver()
+      .take(1)
+      .asDriver(onErrorDriveWith: .empty())
       .drive(onNext: { [weak self] _ in
         self?.nameTextField.textField.becomeFirstResponder()
       }).disposed(by: disposeBag)
@@ -139,9 +140,8 @@ class IdentifyingViewController: UIViewController, View {
       .bind(to: reactor.action)
       .disposed(by: disposeBag)
     
-    phoneNumberTextField.rx.selectedCarrier
-      .compactMap { $0 }
-      .map { Reactor.Action.setCarrier($0) }
+    phoneNumberTextField.rx.carrierButtonTap
+      .map { Reactor.Action.tapCarrierButton }
       .bind(to: reactor.action)
       .disposed(by: disposeBag)
     
@@ -149,6 +149,14 @@ class IdentifyingViewController: UIViewController, View {
       .distinctUntilChanged()
       .map { Reactor.Action.setPhoneNumber($0) }
       .bind(to: reactor.action)
+      .disposed(by: disposeBag)
+    
+    // State
+    reactor.state.map { $0.mobileCarrier }
+      .distinctUntilChanged()
+      .compactMap { $0 }
+      .asDriver(onErrorDriveWith: .empty())
+      .drive(phoneNumberTextField.rx.selectedCarrier)
       .disposed(by: disposeBag)
   }
 }
@@ -159,6 +167,7 @@ class IdentifyingViewReactor: Reactor, Stepper {
     case setName(_ name: String)
     case setBirthDate(_ birthDate: String)
     case setGender(_ gender: String)
+    case tapCarrierButton
     case setCarrier(_ carrier: MobileCarrier)
     case setPhoneNumber(_ phone: String)
   }
@@ -181,6 +190,7 @@ class IdentifyingViewReactor: Reactor, Stepper {
   
   let initialState = State()
   let steps = PublishRelay<Step>()
+  let selectedCarrierObserver = PublishSubject<MobileCarrier>()
   
   func mutate(action: Action) -> Observable<Mutation> {
     switch action {
@@ -190,6 +200,9 @@ class IdentifyingViewReactor: Reactor, Stepper {
       return .just(.updateBirthDate(birthDate))
     case .setGender(let gender):
       return .just(.updateGender(gender))
+    case .tapCarrierButton:
+      steps.accept(OnboardingStep.presentCarrierModal(selectedCarrierObserver))
+      return .empty()
     case .setCarrier(let carrier):
       return .just(.updateCarrier(carrier))
     case .setPhoneNumber(let phone):
@@ -214,5 +227,12 @@ class IdentifyingViewReactor: Reactor, Stepper {
     }
     
     return newState
+  }
+  
+  
+  // MARK: Mutation Transform
+  func transform(mutation: Observable<Mutation>) -> Observable<Mutation> {
+    let carrierSelected = selectedCarrierObserver.map { Mutation.updateCarrier($0) }
+    return .merge(mutation, carrierSelected)
   }
 }

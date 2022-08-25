@@ -94,7 +94,7 @@ class CarrierSelectionButtonView: UIView, View {
     // State
     reactor.pulse(\.$selectedCarrier)
       .distinctUntilChanged()
-      .map { $0?.rawValue ?? "통신사" }
+      .map { $0?.name ?? "통신사" }
       .asDriver(onErrorDriveWith: .empty())
       .drive(label.rx.text)
       .disposed(by: disposeBag)
@@ -105,9 +105,11 @@ class CarrierSelectionButtonView: UIView, View {
 
 // MARK: SelectionButtonView + Rx
 extension Reactive where Base == CarrierSelectionButtonView {
-  var selectedCarrier: Observable<MobileCarrier?> {
-    guard let reactor = base.reactor else { return .empty() }
-    return reactor.pulse(\.$selectedCarrier)
+  var selectedCarrier: Binder<MobileCarrier> {
+    return Binder(base) { view, carrier in
+      guard let reactor = view.reactor else { return }
+      reactor.action.onNext(.updateCarrier(carrier))
+    }
   }
 }
 

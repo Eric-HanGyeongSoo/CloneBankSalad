@@ -67,6 +67,9 @@
 		B06F45EB28B6FBB8000C3E2D /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = B06F45EA28B6FBB8000C3E2D /* RxGesture */; };
 		B06F45EE28B6FBC5000C3E2D /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = B06F45ED28B6FBC5000C3E2D /* PanModal */; };
 		B06F45F028B6FBD1000C3E2D /* UIView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06F45EF28B6FBD1000C3E2D /* UIView+Rx.swift */; };
+		B06F45F228B6FD32000C3E2D /* CarrierSelectionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06F45F128B6FD32000C3E2D /* CarrierSelectionModalViewController.swift */; };
+		B06F45F428B7014B000C3E2D /* CarrierCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06F45F328B7014B000C3E2D /* CarrierCellView.swift */; };
+		B06F45F628B70D48000C3E2D /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06F45F528B70D48000C3E2D /* NotificationName+Extension.swift */; };
 		B0D3C14728B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D3C14628B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift */; };
 		B0E708CA28B5AEC000EEBA31 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0E708C328B5AEBF00EEBA31 /* Pretendard-ExtraLight.otf */; };
 		B0E708CB28B5AEC000EEBA31 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0E708C328B5AEBF00EEBA31 /* Pretendard-ExtraLight.otf */; };
@@ -144,6 +147,9 @@
 		B053B0B328B3551A008B751E /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		B053B0BA28B35BB3008B751E /* OnboardingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
 		B06F45EF28B6FBD1000C3E2D /* UIView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Rx.swift"; sourceTree = "<group>"; };
+		B06F45F128B6FD32000C3E2D /* CarrierSelectionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierSelectionModalViewController.swift; sourceTree = "<group>"; };
+		B06F45F328B7014B000C3E2D /* CarrierCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierCellView.swift; sourceTree = "<group>"; };
+		B06F45F528B70D48000C3E2D /* NotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
 		B0D3C14628B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationNumberTextFieldView.swift; sourceTree = "<group>"; };
 		B0E708C328B5AEBF00EEBA31 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		B0E708C428B5AEBF00EEBA31 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
@@ -195,6 +201,7 @@
 				B0D3C14628B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift */,
 				B046A44528B46D8A001738DF /* PhoneNumberTextFieldView.swift */,
 				B046A44728B470D4001738DF /* CarrierSelectionButtonView.swift */,
+				B06F45F328B7014B000C3E2D /* CarrierCellView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,6 +214,7 @@
 				4610880B28B2134900616985 /* UIColor+Extension.swift */,
 				461087EC28B2100500616985 /* UIFont+Extension.swift */,
 				4610880F28B215B100616985 /* UIImage+Extension.swift */,
+				B06F45F528B70D48000C3E2D /* NotificationName+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -291,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				461087E428B1F56E00616985 /* View */,
+				B06F45F128B6FD32000C3E2D /* CarrierSelectionModalViewController.swift */,
 				462F46E228AFA1D400B5BA68 /* IdentifyingUserViewController.swift */,
 			);
 			path = Onboarding;
@@ -611,10 +620,13 @@
 				B06F45F028B6FBD1000C3E2D /* UIView+Rx.swift in Sources */,
 				4610880C28B2134900616985 /* UIColor+Extension.swift in Sources */,
 				B046A44B28B473B7001738DF /* Common.swift in Sources */,
+				B06F45F628B70D48000C3E2D /* NotificationName+Extension.swift in Sources */,
 				461087ED28B2100500616985 /* UIFont+Extension.swift in Sources */,
 				461087E628B1F59700616985 /* NameTextFieldView.swift in Sources */,
 				4610881028B215B100616985 /* UIImage+Extension.swift in Sources */,
+				B06F45F428B7014B000C3E2D /* CarrierCellView.swift in Sources */,
 				B046A44828B470D4001738DF /* CarrierSelectionButtonView.swift in Sources */,
+				B06F45F228B6FD32000C3E2D /* CarrierSelectionModalViewController.swift in Sources */,
 				46F9A0C728AF9C2600D43341 /* ViewController.swift in Sources */,
 				46F9A0C328AF9C2600D43341 /* AppDelegate.swift in Sources */,
 				B053B0BB28B35BB3008B751E /* OnboardingFlow.swift in Sources */,
