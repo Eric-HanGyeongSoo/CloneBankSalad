@@ -71,7 +71,7 @@ class NameTextFieldView: UIView, View {
   // MARK: Setup Views
   func setupViews() {
     self.layer.cornerRadius = 13
-    self.layer.borderWidth = 0.7
+    self.layer.borderWidth = 1
     self.layer.borderColor = UIColor.assetColor(.co_e9eaee).cgColor
     self.backgroundColor = UIColor.assetColor(.co_fafafa)
   }

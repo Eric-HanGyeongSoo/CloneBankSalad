@@ -98,7 +98,7 @@ class RegistrationNumberTextFieldView: UIView, View {
   // MARK: Setup View
   func setupViews() {
     self.layer.cornerRadius = 13
-    self.layer.borderWidth = 0.7
+    self.layer.borderWidth = 1
     self.layer.borderColor = UIColor.clear.cgColor
     self.backgroundColor = UIColor.assetColor(.co_fafafa)
   }
