@@ -27,7 +27,7 @@ class IdentifyingViewController: UIViewController, View {
   lazy var subtitleLabel: UILabel = {
     let label = UILabel()
     let attributedString = NSMutableAttributedString(string: "회원여부 확인 및 가입을 진행합니다.")
-    attributedString.setFont(UIFont.appleSDGothicNeo(size: 17))
+    attributedString.setFont(UIFont.appleSDGothicNeo(size: 17, weight: .medium))
     attributedString.setColor(UIColor.assetColor(.co_656d75))
     attributedString.setLetterSpacing(-0.68)
     label.attributedText = attributedString

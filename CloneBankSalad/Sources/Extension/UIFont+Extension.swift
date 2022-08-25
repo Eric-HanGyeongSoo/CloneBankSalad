@@ -19,8 +19,7 @@ extension UIFont {
     case bold = "AppleSDGothicNeo-Bold"
   }
   
-  static func appleSDGothicNeo(size: CGFloat, weight: AppleSDGothicNeo? = .regular) -> UIFont {
-    let weight = weight ?? .regular
+  static func appleSDGothicNeo(size: CGFloat, weight: AppleSDGothicNeo = .regular) -> UIFont {
     return UIFont(name: weight.rawValue, size: size)!
   }
 }
@@ -36,8 +35,7 @@ extension UIFont {
     case bold = "Pretendard-Bold"
   }
   
-  static func pretendard(size: CGFloat, weight: Pretendard? = .regular) -> UIFont {
-    let weight = weight ?? .regular
+  static func pretendard(size: CGFloat, weight: Pretendard = .regular) -> UIFont {
     return UIFont(name: weight.rawValue, size: size)!
   }
 }

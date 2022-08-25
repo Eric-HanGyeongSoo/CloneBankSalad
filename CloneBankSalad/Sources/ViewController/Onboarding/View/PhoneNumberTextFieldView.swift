@@ -18,7 +18,7 @@ class PhoneNumberTextFieldView: UIView, View {
   lazy var label: UILabel = {
     let label = UILabel()
     label.text = "휴대폰번호"
-    label.font = UIFont.appleSDGothicNeo(size: 12)
+    label.font = UIFont.appleSDGothicNeo(size: 12, weight: .medium)
     label.textColor = UIColor.assetColor(.co_656e77)
     return label
   }()
@@ -38,12 +38,10 @@ class PhoneNumberTextFieldView: UIView, View {
   lazy var textField: UITextField = {
     let textField = UITextField()
     let attributedPlaceholder = NSMutableAttributedString(string: "휴대폰번호 입력")
-    attributedPlaceholder.setFont(UIFont.appleSDGothicNeo(size: 18))
+    attributedPlaceholder.setFont(UIFont.appleSDGothicNeo(size: 18, weight: .medium))
     attributedPlaceholder.setColor(UIColor.assetColor(.co_848894))
     attributedPlaceholder.setLetterSpacing(-0.09)
     textField.attributedPlaceholder = attributedPlaceholder
-    textField.font = UIFont.appleSDGothicNeo(size: 19)
-    textField.textColor = UIColor.assetColor(.co_111111)
     textField.keyboardType = .numberPad
     return textField
   }()

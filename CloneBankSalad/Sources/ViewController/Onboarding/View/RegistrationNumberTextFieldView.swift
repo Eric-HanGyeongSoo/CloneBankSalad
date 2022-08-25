@@ -17,7 +17,7 @@ class RegistrationNumberTextFieldView: UIView, View {
   lazy var label: UILabel = {
     let label = UILabel()
     label.text = "주민등록번호 7자리"
-    label.font = UIFont.appleSDGothicNeo(size: 12)
+    label.font = UIFont.appleSDGothicNeo(size: 12, weight: .medium)
     label.textColor = UIColor.assetColor(.co_656e77)
     return label
   }()
@@ -25,12 +25,10 @@ class RegistrationNumberTextFieldView: UIView, View {
   lazy var birthDateTextField: UITextField = {
     let textField = UITextField()
     let attributedPlaceholder = NSMutableAttributedString(string: "생년월일")
-    attributedPlaceholder.setFont(UIFont.appleSDGothicNeo(size: 18))
+    attributedPlaceholder.setFont(UIFont.appleSDGothicNeo(size: 18, weight: .medium))
     attributedPlaceholder.setColor(UIColor.assetColor(.co_848894))
     attributedPlaceholder.setLetterSpacing(-0.09)
     textField.attributedPlaceholder = attributedPlaceholder
-    textField.font = UIFont.appleSDGothicNeo(size: 18)
-    textField.textColor = UIColor.assetColor(.co_0f0f0f)
     textField.keyboardType = .numberPad
     return textField
   }()

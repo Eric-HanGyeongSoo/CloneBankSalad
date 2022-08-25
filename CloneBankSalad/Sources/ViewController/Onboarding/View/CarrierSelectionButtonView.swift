@@ -18,7 +18,7 @@ class CarrierSelectionButtonView: UIView, View {
   lazy var label: UILabel = {
     let label = UILabel()
     label.text = "통신사"
-    label.font = UIFont.appleSDGothicNeo(size: 12)
+    label.font = UIFont.appleSDGothicNeo(size: 12, weight: .semiBold)
     label.textColor = UIColor.assetColor(.co_010207)
     return label
   }()
