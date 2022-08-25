@@ -46,6 +46,38 @@ class PhoneNumberTextFieldView: UIView, View {
     return textField
   }()
   
+  lazy var wrapperView: UIView = {
+    let view = UIView()
+    view.backgroundColor = UIColor.assetColor(.co_fafafa)
+    view.layer.cornerRadius = 13
+    view.layer.borderWidth = 1
+    view.layer.borderColor = UIColor.clear.cgColor
+    view.addSubview(label)
+    view.addSubview(carrierSelectionButton)
+    view.addSubview(textField)
+    view.addSubview(clearButton)
+    return view
+  }()
+  
+  lazy var errorLabel: UILabel = {
+    let label = UILabel()
+    label.text = "입력한 번호를 확인해주세요"
+    label.font = UIFont.appleSDGothicNeo(size: 12, weight: .medium)
+    label.textColor = UIColor.assetColor(.co_ee2440)
+    label.isHidden = true
+    return label
+  }()
+  
+  lazy var stackView: UIStackView = {
+    let stackView = UIStackView()
+    stackView.axis = .vertical
+    stackView.alignment = .leading
+    stackView.spacing = 9
+    stackView.addArrangedSubview(wrapperView)
+    stackView.addArrangedSubview(errorLabel)
+    return stackView
+  }()
+  
   // MARK: Associated Types
   typealias Reactor = PhoneNumberTextFieldReactor
   
@@ -78,19 +110,19 @@ class PhoneNumberTextFieldView: UIView, View {
   
   // MARK: Setup Views
   func setupViews() {
-    self.layer.cornerRadius = 13
-    self.layer.borderWidth = 0.7
-    self.layer.borderColor = UIColor.clear.cgColor
-    self.backgroundColor = UIColor.assetColor(.co_fafafa)
+    
   }
   
   
   // MARK: Layout Views
   func setupConstraints() {
-    self.addSubview(label)
-    self.addSubview(carrierSelectionButton)
-    self.addSubview(textField)
-    self.addSubview(clearButton)
+    self.addSubview(stackView)
+    stackView.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
+    wrapperView.snp.makeConstraints { make in
+      make.width.equalTo(stackView)
+    }
     label.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(16)
       make.top.equalToSuperview().offset(12)
@@ -151,14 +183,26 @@ class PhoneNumberTextFieldView: UIView, View {
     .asDriver(onErrorDriveWith: .empty())
     .drive(onNext: { [weak self] isFocused, phone in
       if isFocused {
-        self?.layer.borderColor = UIColor.assetColor(.co_353a40).cgColor
-        self?.backgroundColor = UIColor.white
+        self?.wrapperView.backgroundColor = UIColor.white
+        if phone.count >= 3 && !Regex.phonePrefix.validate(phone) {
+          self?.wrapperView.layer.borderColor = UIColor.assetColor(.co_ee2440).cgColor
+          self?.errorLabel.isHidden = false
+        } else {
+          self?.wrapperView.layer.borderColor = UIColor.assetColor(.co_353a40).cgColor
+          self?.errorLabel.isHidden = true
+        }
       } else if phone.isEmpty {
-        self?.layer.borderColor = UIColor.clear.cgColor
-        self?.backgroundColor = UIColor.assetColor(.co_fafafa)
+        self?.wrapperView.layer.borderColor = UIColor.clear.cgColor
+        self?.wrapperView.backgroundColor = UIColor.assetColor(.co_fafafa)
       } else {
-        self?.layer.borderColor = UIColor.assetColor(.co_e9eaee).cgColor
-        self?.backgroundColor = UIColor.white
+        self?.wrapperView.backgroundColor = UIColor.white
+        if !Regex.phone.validate(phone) {
+          self?.wrapperView.layer.borderColor = UIColor.assetColor(.co_ee2440).cgColor
+          self?.errorLabel.isHidden = false
+        } else {
+          self?.wrapperView.layer.borderColor = UIColor.assetColor(.co_e9eaee).cgColor
+          self?.errorLabel.isHidden = true
+        }
       }
     }).disposed(by: disposeBag)
     

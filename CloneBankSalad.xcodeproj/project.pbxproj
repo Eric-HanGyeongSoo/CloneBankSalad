@@ -70,6 +70,7 @@
 		B06F45F228B6FD32000C3E2D /* CarrierSelectionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06F45F128B6FD32000C3E2D /* CarrierSelectionModalViewController.swift */; };
 		B06F45F428B7014B000C3E2D /* CarrierCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06F45F328B7014B000C3E2D /* CarrierCellView.swift */; };
 		B06F45F628B70D48000C3E2D /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06F45F528B70D48000C3E2D /* NotificationName+Extension.swift */; };
+		B06F45F928B753C7000C3E2D /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06F45F828B753C7000C3E2D /* Regex.swift */; };
 		B0D3C14728B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D3C14628B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift */; };
 		B0E708CA28B5AEC000EEBA31 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0E708C328B5AEBF00EEBA31 /* Pretendard-ExtraLight.otf */; };
 		B0E708CB28B5AEC000EEBA31 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0E708C328B5AEBF00EEBA31 /* Pretendard-ExtraLight.otf */; };
@@ -150,6 +151,7 @@
 		B06F45F128B6FD32000C3E2D /* CarrierSelectionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierSelectionModalViewController.swift; sourceTree = "<group>"; };
 		B06F45F328B7014B000C3E2D /* CarrierCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierCellView.swift; sourceTree = "<group>"; };
 		B06F45F528B70D48000C3E2D /* NotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
+		B06F45F828B753C7000C3E2D /* Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		B0D3C14628B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationNumberTextFieldView.swift; sourceTree = "<group>"; };
 		B0E708C328B5AEBF00EEBA31 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		B0E708C428B5AEBF00EEBA31 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 		4610880828B2123600616985 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B06F45F728B753C0000C3E2D /* Util */,
 				B046A44928B473AA001738DF /* Model */,
 				461087EB28B20FFC00616985 /* Extension */,
 				B053B0B228B354C6008B751E /* Flow */,
@@ -369,6 +372,14 @@
 				B053B0BA28B35BB3008B751E /* OnboardingFlow.swift */,
 			);
 			path = Flow;
+			sourceTree = "<group>";
+		};
+		B06F45F728B753C0000C3E2D /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				B06F45F828B753C7000C3E2D /* Regex.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		B0E708C128B5AEA100EEBA31 /* NotoSansKR */ = {
@@ -626,6 +637,7 @@
 				4610881028B215B100616985 /* UIImage+Extension.swift in Sources */,
 				B06F45F428B7014B000C3E2D /* CarrierCellView.swift in Sources */,
 				B046A44828B470D4001738DF /* CarrierSelectionButtonView.swift in Sources */,
+				B06F45F928B753C7000C3E2D /* Regex.swift in Sources */,
 				B06F45F228B6FD32000C3E2D /* CarrierSelectionModalViewController.swift in Sources */,
 				46F9A0C728AF9C2600D43341 /* ViewController.swift in Sources */,
 				46F9A0C328AF9C2600D43341 /* AppDelegate.swift in Sources */,
