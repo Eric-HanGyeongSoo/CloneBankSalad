@@ -64,6 +64,9 @@
 		B053B0B428B3551A008B751E /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053B0B328B3551A008B751E /* AppFlow.swift */; };
 		B053B0B728B3555F008B751E /* RxFlow in Frameworks */ = {isa = PBXBuildFile; productRef = B053B0B628B3555F008B751E /* RxFlow */; };
 		B053B0BB28B35BB3008B751E /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053B0BA28B35BB3008B751E /* OnboardingFlow.swift */; };
+		B06F45EB28B6FBB8000C3E2D /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = B06F45EA28B6FBB8000C3E2D /* RxGesture */; };
+		B06F45EE28B6FBC5000C3E2D /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = B06F45ED28B6FBC5000C3E2D /* PanModal */; };
+		B06F45F028B6FBD1000C3E2D /* UIView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06F45EF28B6FBD1000C3E2D /* UIView+Rx.swift */; };
 		B0D3C14728B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D3C14628B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift */; };
 		B0E708CA28B5AEC000EEBA31 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0E708C328B5AEBF00EEBA31 /* Pretendard-ExtraLight.otf */; };
 		B0E708CB28B5AEC000EEBA31 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0E708C328B5AEBF00EEBA31 /* Pretendard-ExtraLight.otf */; };
@@ -140,6 +143,7 @@
 		B046A44A28B473B7001738DF /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		B053B0B328B3551A008B751E /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		B053B0BA28B35BB3008B751E /* OnboardingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
+		B06F45EF28B6FBD1000C3E2D /* UIView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Rx.swift"; sourceTree = "<group>"; };
 		B0D3C14628B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationNumberTextFieldView.swift; sourceTree = "<group>"; };
 		B0E708C328B5AEBF00EEBA31 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		B0E708C428B5AEBF00EEBA31 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
@@ -171,11 +175,13 @@
 			files = (
 				462F46C328AF9F0B00B5BA68 /* RxSwift in Frameworks */,
 				B053B0B728B3555F008B751E /* RxFlow in Frameworks */,
+				B06F45EB28B6FBB8000C3E2D /* RxGesture in Frameworks */,
 				462F46C128AF9F0B00B5BA68 /* RxRelay in Frameworks */,
 				462F46E928AFA4A000B5BA68 /* ReactorKit in Frameworks */,
 				462F46BF28AF9F0B00B5BA68 /* RxCocoa in Frameworks */,
 				461087E928B1F6EE00616985 /* SnapKit in Frameworks */,
 				4630C80728B227770081EF94 /* IQKeyboardManagerSwift in Frameworks */,
+				B06F45EE28B6FBC5000C3E2D /* PanModal in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +309,7 @@
 			children = (
 				4630C80B28B240120081EF94 /* UITextField+Rx.swift */,
 				4630C80928B23A1C0081EF94 /* UIViewController+Rx.swift */,
+				B06F45EF28B6FBD1000C3E2D /* UIView+Rx.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -442,6 +449,8 @@
 				461087E828B1F6EE00616985 /* SnapKit */,
 				4630C80628B227770081EF94 /* IQKeyboardManagerSwift */,
 				B053B0B628B3555F008B751E /* RxFlow */,
+				B06F45EA28B6FBB8000C3E2D /* RxGesture */,
+				B06F45ED28B6FBC5000C3E2D /* PanModal */,
 			);
 			productName = CloneBankSalad;
 			productReference = 46F9A0BF28AF9C2600D43341 /* CloneBankSalad.app */;
@@ -485,6 +494,8 @@
 				461087E728B1F6EE00616985 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				4630C80528B227770081EF94 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				B053B0B528B3555F008B751E /* XCRemoteSwiftPackageReference "RxFlow" */,
+				B06F45E928B6FBB8000C3E2D /* XCRemoteSwiftPackageReference "RxGesture" */,
+				B06F45EC28B6FBC5000C3E2D /* XCRemoteSwiftPackageReference "PanModal" */,
 			);
 			productRefGroup = 46F9A0C028AF9C2600D43341 /* Products */;
 			projectDirPath = "";
@@ -597,6 +608,7 @@
 				B046A44628B46D8A001738DF /* PhoneNumberTextFieldView.swift in Sources */,
 				B053B0B428B3551A008B751E /* AppFlow.swift in Sources */,
 				4610881428B21BA400616985 /* NSAttributedString+Extension.swift in Sources */,
+				B06F45F028B6FBD1000C3E2D /* UIView+Rx.swift in Sources */,
 				4610880C28B2134900616985 /* UIColor+Extension.swift in Sources */,
 				B046A44B28B473B7001738DF /* Common.swift in Sources */,
 				461087ED28B2100500616985 /* UIFont+Extension.swift in Sources */,
@@ -968,6 +980,22 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		B06F45E928B6FBB8000C3E2D /* XCRemoteSwiftPackageReference "RxGesture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxGesture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		B06F45EC28B6FBC5000C3E2D /* XCRemoteSwiftPackageReference "PanModal" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/slackhq/PanModal.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1005,6 +1033,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B053B0B528B3555F008B751E /* XCRemoteSwiftPackageReference "RxFlow" */;
 			productName = RxFlow;
+		};
+		B06F45EA28B6FBB8000C3E2D /* RxGesture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B06F45E928B6FBB8000C3E2D /* XCRemoteSwiftPackageReference "RxGesture" */;
+			productName = RxGesture;
+		};
+		B06F45ED28B6FBC5000C3E2D /* PanModal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B06F45EC28B6FBC5000C3E2D /* XCRemoteSwiftPackageReference "PanModal" */;
+			productName = PanModal;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
