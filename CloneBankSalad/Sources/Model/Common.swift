@@ -28,11 +28,11 @@ enum MobileCarrier: Int, CaseIterable, Comparable {
     case .LG:
       return "LGU+"
     case .cheapSKT:
-      return "알뜰폰(SKT)"
+      return "알뜰폰 (SKT)"
     case .cheapKT:
-      return "알뜰폰(KT)"
+      return "알뜰폰 (KT)"
     case .cheapLG:
-      return "알뜰폰(LGU+)"
+      return "알뜰폰 (LGU+)"
     }
   }
 }

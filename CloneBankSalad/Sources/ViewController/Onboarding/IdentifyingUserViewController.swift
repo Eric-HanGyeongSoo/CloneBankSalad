@@ -99,7 +99,7 @@ class IdentifyingViewController: UIViewController, View {
     
     titleLabel.snp.makeConstraints { make in
       make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(20)
-      make.top.equalTo(self.view.safeAreaLayoutGuide).offset(67)
+      make.top.equalTo(self.view.safeAreaLayoutGuide).offset(54)
     }
     subtitleLabel.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(20)

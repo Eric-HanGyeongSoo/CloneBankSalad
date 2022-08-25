@@ -47,7 +47,7 @@ class RegistrationNumberTextFieldView: UIView, View {
     let stackView = UIStackView()
     stackView.axis = .horizontal
     stackView.alignment = .center
-    stackView.distribution = .equalSpacing
+    stackView.spacing = 10
     stackView.addArrangedSubview(genderTextField)
     for _ in 0..<6 {
       let imageView = UIImageView()
@@ -114,7 +114,6 @@ class RegistrationNumberTextFieldView: UIView, View {
     }
     textFieldStackView.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(16)
-      make.trailing.equalToSuperview().offset(-16)
       make.top.equalTo(label.snp.bottom).offset(8)
       make.bottom.equalToSuperview().offset(-12)
       make.height.equalTo(21)

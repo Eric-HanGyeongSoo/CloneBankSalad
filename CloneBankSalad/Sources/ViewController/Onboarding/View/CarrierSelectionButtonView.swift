@@ -76,6 +76,7 @@ class CarrierSelectionButtonView: UIView, View {
       make.top.equalToSuperview().offset(5)
       make.bottom.equalToSuperview().offset(-3)
       make.height.equalTo(15)
+      make.width.lessThanOrEqualTo(56)
     }
     label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
     image.snp.makeConstraints { make in
