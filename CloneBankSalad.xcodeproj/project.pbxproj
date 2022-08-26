@@ -71,6 +71,7 @@
 		B06F45F428B7014B000C3E2D /* CarrierCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06F45F328B7014B000C3E2D /* CarrierCellView.swift */; };
 		B06F45F628B70D48000C3E2D /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06F45F528B70D48000C3E2D /* NotificationName+Extension.swift */; };
 		B06F45F928B753C7000C3E2D /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06F45F828B753C7000C3E2D /* Regex.swift */; };
+		B08C20EE28B848B5006B816F /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B08C20ED28B848B5006B816F /* Then */; };
 		B0D3C14728B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D3C14628B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift */; };
 		B0E708CA28B5AEC000EEBA31 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0E708C328B5AEBF00EEBA31 /* Pretendard-ExtraLight.otf */; };
 		B0E708CB28B5AEC000EEBA31 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0E708C328B5AEBF00EEBA31 /* Pretendard-ExtraLight.otf */; };
@@ -186,6 +187,7 @@
 				B06F45EB28B6FBB8000C3E2D /* RxGesture in Frameworks */,
 				462F46C128AF9F0B00B5BA68 /* RxRelay in Frameworks */,
 				462F46E928AFA4A000B5BA68 /* ReactorKit in Frameworks */,
+				B08C20EE28B848B5006B816F /* Then in Frameworks */,
 				462F46BF28AF9F0B00B5BA68 /* RxCocoa in Frameworks */,
 				461087E928B1F6EE00616985 /* SnapKit in Frameworks */,
 				4630C80728B227770081EF94 /* IQKeyboardManagerSwift in Frameworks */,
@@ -471,6 +473,7 @@
 				B053B0B628B3555F008B751E /* RxFlow */,
 				B06F45EA28B6FBB8000C3E2D /* RxGesture */,
 				B06F45ED28B6FBC5000C3E2D /* PanModal */,
+				B08C20ED28B848B5006B816F /* Then */,
 			);
 			productName = CloneBankSalad;
 			productReference = 46F9A0BF28AF9C2600D43341 /* CloneBankSalad.app */;
@@ -516,6 +519,7 @@
 				B053B0B528B3555F008B751E /* XCRemoteSwiftPackageReference "RxFlow" */,
 				B06F45E928B6FBB8000C3E2D /* XCRemoteSwiftPackageReference "RxGesture" */,
 				B06F45EC28B6FBC5000C3E2D /* XCRemoteSwiftPackageReference "PanModal" */,
+				B08C20EC28B848B5006B816F /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = 46F9A0C028AF9C2600D43341 /* Products */;
 			projectDirPath = "";
@@ -1020,6 +1024,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		B08C20EC28B848B5006B816F /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1067,6 +1079,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B06F45EC28B6FBC5000C3E2D /* XCRemoteSwiftPackageReference "PanModal" */;
 			productName = PanModal;
+		};
+		B08C20ED28B848B5006B816F /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B08C20EC28B848B5006B816F /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
