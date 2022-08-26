@@ -11,64 +11,65 @@ import RxSwift
 import RxCocoa
 import ReactorKit
 import SnapKit
+import Then
+
 
 class RegistrationNumberTextFieldView: UIView, View {
   // MARK: View Components
-  lazy var label: UILabel = {
-    let label = UILabel()
-    label.text = "주민등록번호 7자리"
-    label.font = UIFont.appleSDGothicNeo(size: 12, weight: .medium)
-    label.textColor = UIColor.assetColor(.co_656e77)
-    return label
-  }()
+  lazy var label = UILabel().then {
+    $0.text = "주민등록번호 7자리"
+    $0.font = UIFont.appleSDGothicNeo(size: 12, weight: .medium)
+    $0.textColor = UIColor.assetColor(.co_656e77)
+  }
   
-  lazy var birthDateTextField: UITextField = {
-    let textField = UITextField()
+  lazy var birthDateTextField = UITextField().then {
     let attributedPlaceholder = NSMutableAttributedString(string: "생년월일")
     attributedPlaceholder.setFont(UIFont.appleSDGothicNeo(size: 18, weight: .medium))
     attributedPlaceholder.setColor(UIColor.assetColor(.co_848894))
     attributedPlaceholder.setLetterSpacing(-0.09)
-    textField.attributedPlaceholder = attributedPlaceholder
-    textField.keyboardType = .numberPad
-    return textField
-  }()
+    $0.attributedPlaceholder = attributedPlaceholder
+    $0.keyboardType = .numberPad
+  }
   
-  lazy var genderTextField: UITextField = {
-    let textField = UITextField()
+  lazy var genderTextField = UITextField().then {
     let attributedPlaceholder = NSMutableAttributedString(string: "0")
     attributedPlaceholder.setFont(UIFont.pretendard(size: 18, weight: .medium))
     attributedPlaceholder.setColor(UIColor.assetColor(.co_848894))
-    textField.attributedPlaceholder = attributedPlaceholder
-    textField.keyboardType = .numberPad
-    return textField
-  }()
+    $0.attributedPlaceholder = attributedPlaceholder
+    $0.keyboardType = .numberPad
+  }
   
-  lazy var genderTextFieldStackView: UIStackView = {
-    let stackView = UIStackView()
-    stackView.axis = .horizontal
-    stackView.alignment = .center
-    stackView.spacing = 10
-    stackView.addArrangedSubview(genderTextField)
-    for _ in 0..<6 {
-      let imageView = UIImageView()
-      imageView.image = UIImage.assetImage(.onboarding_secure_star)
-      stackView.addArrangedSubview(imageView)
-    }
-    return stackView
-  }()
+  lazy var genderTextFieldStackView = UIStackView().then {
+    $0.axis = .horizontal
+    $0.alignment = .center
+    $0.spacing = 10
+  }
   
-  lazy var textFieldStackView: UIStackView = {
-    let stackView = UIStackView()
-    stackView.axis = .horizontal
-    stackView.spacing = 21
-    stackView.alignment = .center
-    let hyphenImageView = UIImageView()
-    hyphenImageView.image = UIImage.assetImage(.onboarding_hyphen)
-    stackView.addArrangedSubview(birthDateTextField)
-    stackView.addArrangedSubview(hyphenImageView)
-    stackView.addArrangedSubview(genderTextFieldStackView)
-    return stackView
-  }()
+  lazy var textFieldStackView = UIStackView().then {
+    $0.axis = .horizontal
+    $0.spacing = 21
+    $0.alignment = .center
+  }
+  
+  lazy var wrapperView = UIView().then {
+    $0.backgroundColor = UIColor.assetColor(.co_fafafa)
+    $0.layer.cornerRadius = 13
+    $0.layer.borderWidth = 1
+    $0.layer.borderColor = UIColor.clear.cgColor
+  }
+  
+  lazy var errorLabel = UILabel().then {
+    $0.text = "입력한 정보를 확인해주세요"
+    $0.font = UIFont.appleSDGothicNeo(size: 12, weight: .medium)
+    $0.textColor = UIColor.assetColor(.co_ee2440)
+    $0.isHidden = true
+  }
+  
+  lazy var stackView = UIStackView().then {
+    $0.axis = .vertical
+    $0.alignment = .leading
+    $0.spacing = 9
+  }
   
   // MARK: Properties
   var disposeBag = DisposeBag()
@@ -78,13 +79,13 @@ class RegistrationNumberTextFieldView: UIView, View {
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupViews()
+    buildViewHierarchy()
     self.setNeedsUpdateConstraints()
   }
   
+  @available(*, unavailable)
   required init?(coder: NSCoder) {
-    super.init(coder: coder)
-    setupViews()
-    self.setNeedsUpdateConstraints()
+    fatalError("init(coder:) has not been implemented")
   }
   
   override func updateConstraints() {
@@ -97,16 +98,43 @@ class RegistrationNumberTextFieldView: UIView, View {
   
   // MARK: Setup View
   func setupViews() {
-    self.layer.cornerRadius = 13
-    self.layer.borderWidth = 1
-    self.layer.borderColor = UIColor.clear.cgColor
-    self.backgroundColor = UIColor.assetColor(.co_fafafa)
+    
   }
+  
+  
+  // MARK: Build View Hierarchy
+  func buildViewHierarchy() {
+    self.addSubview(stackView)
+    
+    stackView.addArrangedSubview(wrapperView)
+    stackView.addArrangedSubview(errorLabel)
+    
+    wrapperView.addSubview(label)
+    wrapperView.addSubview(textFieldStackView)
+    
+    let hyphenImageView = UIImageView()
+    hyphenImageView.image = UIImage.assetImage(.onboarding_hyphen)
+    textFieldStackView.addArrangedSubview(birthDateTextField)
+    textFieldStackView.addArrangedSubview(hyphenImageView)
+    textFieldStackView.addArrangedSubview(genderTextFieldStackView)
+    
+    genderTextFieldStackView.addArrangedSubview(genderTextField)
+    for _ in 0..<6 {
+      let imageView = UIImageView()
+      imageView.image = UIImage.assetImage(.onboarding_secure_star)
+      genderTextFieldStackView.addArrangedSubview(imageView)
+    }
+  }
+  
   
   // MARK: Layout Views
   func setupConstraints() {
-    self.addSubview(label)
-    self.addSubview(textFieldStackView)
+    stackView.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
+    wrapperView.snp.makeConstraints { make in
+      make.width.equalTo(stackView)
+    }
     label.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(16)
       make.top.equalToSuperview().offset(12)
@@ -211,16 +239,34 @@ class RegistrationNumberTextFieldView: UIView, View {
     .asDriver(onErrorDriveWith: .empty())
     .drive(onNext: { [weak self] isFocused, birthDate, gender in
       if isFocused {
-        self?.layer.borderColor = UIColor.assetColor(.co_353a40).cgColor
-        self?.backgroundColor = UIColor.white
+        if birthDate.count == 6 && gender.count == 1 && !Regex.genderNumber.validate(gender) {
+          self?.showError(true, backgroundColor: .white)
+        } else {
+          self?.showError(false, backgroundColor: .white, borderColor: UIColor.assetColor(.co_353a40).cgColor)
+        }
       } else if birthDate.isEmpty && gender.isEmpty {
-        self?.layer.borderColor = UIColor.clear.cgColor
-        self?.backgroundColor = UIColor.assetColor(.co_fafafa)
+        self?.showError(false, backgroundColor: UIColor.assetColor(.co_fafafa), borderColor: UIColor.clear.cgColor)
       } else {
-        self?.layer.borderColor = UIColor.assetColor(.co_e9eaee).cgColor
-        self?.backgroundColor = UIColor.white
+        if birthDate.count == 6 && gender.count == 1 && Regex.genderNumber.validate(gender) {
+          self?.showError(false, backgroundColor: .white, borderColor: UIColor.assetColor(.co_e9eaee).cgColor)
+        } else {
+          self?.showError(true, backgroundColor: .white)
+        }
       }
     }).disposed(by: disposeBag)
+  }
+  
+  
+  // MARK: View Fetcher
+  func showError(_ error: Bool, backgroundColor: UIColor, borderColor: CGColor? = nil) {
+    self.wrapperView.backgroundColor = backgroundColor
+    if error {
+      self.wrapperView.layer.borderColor = UIColor.assetColor(.co_ee2440).cgColor
+      self.errorLabel.isHidden = false
+    } else {
+      self.wrapperView.layer.borderColor = borderColor
+      self.errorLabel.isHidden = true
+    }
   }
 }
 

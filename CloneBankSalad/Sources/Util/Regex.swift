@@ -11,6 +11,7 @@ import Foundation
 enum Regex {
   case phonePrefix
   case phone
+  case genderNumber
   
   
   var pattern: String {
@@ -19,6 +20,8 @@ enum Regex {
       return #"^01([016789])\d*"#
     case .phone:
       return #"^01([016789])\d{3,4}\d{4}"#
+    case .genderNumber:
+      return #"^[123456]"#
     }
   }
   
