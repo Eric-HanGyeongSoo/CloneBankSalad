@@ -11,34 +11,49 @@ import RxSwift
 import RxCocoa
 import ReactorKit
 import SnapKit
+import Then
 
 class NameTextFieldView: UIView, View {
   // MARK: View Components
-  lazy var label: UILabel = {
-    let label = UILabel()
-    label.text = "이름"
-    label.font = UIFont.appleSDGothicNeo(size: 12, weight: .medium)
-    label.textColor = UIColor.assetColor(.co_656e77)
-    return label
-  }()
+  lazy var label = UILabel().then {
+    $0.text = "이름"
+    $0.font = UIFont.appleSDGothicNeo(size: 12, weight: .medium)
+    $0.textColor = UIColor.assetColor(.co_656e77)
+  }
   
-  lazy var textField: UITextField = {
-    let textField = UITextField()
+  lazy var textField = UITextField().then {
     let attributedPlaceholder = NSMutableAttributedString("이름 입력")
     attributedPlaceholder.setFont(UIFont.appleSDGothicNeo(size: 18, weight: .medium))
     attributedPlaceholder.setColor(UIColor.assetColor(.co_848894))
     attributedPlaceholder.setLetterSpacing(-0.09)
-    textField.attributedPlaceholder = attributedPlaceholder
-    textField.font = UIFont.appleSDGothicNeo(size: 18, weight: .medium)
-    textField.textColor = UIColor.assetColor(.co_2b3034)
-    return textField
-  }()
+    $0.attributedPlaceholder = attributedPlaceholder
+    $0.font = UIFont.appleSDGothicNeo(size: 18, weight: .medium)
+    $0.textColor = UIColor.assetColor(.co_2b3034)
+  }
   
-  lazy var clearButton: UIButton = {
-    let button = UIButton()
-    button.setImage(UIImage.assetImage(.onboarding_clear), for: .normal)
-    return button
-  }()
+  lazy var clearButton = UIButton().then {
+    $0.setImage(UIImage.assetImage(.onboarding_clear), for: .normal)
+  }
+  
+  lazy var wrapperView = UIView().then {
+    $0.backgroundColor = UIColor.assetColor(.co_fafafa)
+    $0.layer.cornerRadius = 13
+    $0.layer.borderWidth = 1
+    $0.layer.borderColor = UIColor.clear.cgColor
+  }
+  
+  lazy var errorLabel = UILabel().then {
+    $0.text = "한글 또는 영문으로 입력해주세요"
+    $0.font = UIFont.appleSDGothicNeo(size: 12, weight: .medium)
+    $0.textColor = UIColor.assetColor(.co_ee2440)
+    $0.isHidden = true
+  }
+  
+  lazy var stackView = UIStackView().then {
+    $0.axis = .vertical
+    $0.alignment = .leading
+    $0.spacing = 9
+  }
   
   
   // MARK: Properties
@@ -49,13 +64,13 @@ class NameTextFieldView: UIView, View {
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupViews()
+    buildViewHierarchy()
     self.setNeedsUpdateConstraints()
   }
   
+  @available(*, unavailable)
   required init?(coder: NSCoder) {
-    super.init(coder: coder)
-    setupViews()
-    self.setNeedsUpdateConstraints()
+    fatalError("init(coder:) has not been implemented")
   }
   
   
@@ -70,18 +85,31 @@ class NameTextFieldView: UIView, View {
   
   // MARK: Setup Views
   func setupViews() {
-    self.layer.cornerRadius = 13
-    self.layer.borderWidth = 1
-    self.layer.borderColor = UIColor.assetColor(.co_e9eaee).cgColor
-    self.backgroundColor = UIColor.assetColor(.co_fafafa)
+    
+  }
+  
+  
+  // MARK: Build View Hierarchy
+  func buildViewHierarchy() {
+    self.addSubview(stackView)
+    
+    stackView.addArrangedSubview(wrapperView)
+    stackView.addArrangedSubview(errorLabel)
+    
+    wrapperView.addSubview(label)
+    wrapperView.addSubview(textField)
+    wrapperView.addSubview(clearButton)
   }
   
   
   // MARK: Layout Views
   func setupConstraints() {
-    self.addSubview(label)
-    self.addSubview(textField)
-    self.addSubview(clearButton)
+    stackView.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
+    wrapperView.snp.makeConstraints { make in
+      make.width.equalTo(stackView)
+    }
     label.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(16)
       make.top.equalToSuperview().offset(12)
@@ -100,6 +128,7 @@ class NameTextFieldView: UIView, View {
       make.height.width.equalTo(17)
     }
   }
+  
   
   // MARK: Binding
   func bind(reactor: NameTextFieldReactor) {
@@ -120,16 +149,21 @@ class NameTextFieldView: UIView, View {
       reactor.state.map { $0.name }.distinctUntilChanged()
     )
     .asDriver(onErrorDriveWith: .empty())
-    .drive(onNext: { [weak self] isFocused, text in
+    .drive(onNext: { [weak self] isFocused, name in
       if isFocused {
-        self?.layer.borderColor = UIColor.assetColor(.co_353a40).cgColor
-        self?.backgroundColor = UIColor.white
-      } else if text.isEmpty {
-        self?.layer.borderColor = UIColor.clear.cgColor
-        self?.backgroundColor = UIColor.assetColor(.co_fafafa)
+        if Regex.name.validate(name) {
+          self?.showError(false, backgroundColor: .white, borderColor: UIColor.assetColor(.co_353a40).cgColor)
+        } else {
+          self?.showError(true, backgroundColor: .white)
+        }
+      } else if name.isEmpty {
+        self?.showError(false, backgroundColor: UIColor.assetColor(.co_fafafa), borderColor: UIColor.clear.cgColor)
       } else {
-        self?.layer.borderColor = UIColor.assetColor(.co_e9eaee).cgColor
-        self?.backgroundColor = UIColor.white
+        if Regex.name.validate(name) {
+          self?.showError(false, backgroundColor: .white, borderColor: UIColor.assetColor(.co_e9eaee).cgColor)
+        } else {
+          self?.showError(true, backgroundColor: .white)
+        }
       }
     }).disposed(by: disposeBag)
     
@@ -145,6 +179,19 @@ class NameTextFieldView: UIView, View {
       .asDriver(onErrorDriveWith: .empty())
       .drive(textField.rx.attributedText)
       .disposed(by: disposeBag)
+  }
+  
+  
+  // MARK: View Fetcher
+  func showError(_ error: Bool, backgroundColor: UIColor, borderColor: CGColor? = nil) {
+    self.wrapperView.backgroundColor = backgroundColor
+    if error {
+      self.wrapperView.layer.borderColor = UIColor.assetColor(.co_ee2440).cgColor
+      self.errorLabel.isHidden = false
+    } else {
+      self.wrapperView.layer.borderColor = borderColor
+      self.errorLabel.isHidden = true
+    }
   }
 }
 
