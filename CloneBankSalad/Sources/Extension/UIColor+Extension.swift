@@ -24,6 +24,9 @@ extension UIColor {
     case co_0f0f0f
     case co_30363e
     case co_ee2440
+    case co_a5a8af
+    case co_5a7fc6
+    case co_1ac66d
   }
   
   static func assetColor(_ color: AssetColor) -> UIColor {
