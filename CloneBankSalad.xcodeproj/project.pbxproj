@@ -72,6 +72,7 @@
 		B06F45F628B70D48000C3E2D /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06F45F528B70D48000C3E2D /* NotificationName+Extension.swift */; };
 		B06F45F928B753C7000C3E2D /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06F45F828B753C7000C3E2D /* Regex.swift */; };
 		B08C20EE28B848B5006B816F /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B08C20ED28B848B5006B816F /* Then */; };
+		B08C210528B8B2C5006B816F /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C210428B8B2C5006B816F /* UILabel+Extension.swift */; };
 		B0D3C14728B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D3C14628B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift */; };
 		B0E708CA28B5AEC000EEBA31 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0E708C328B5AEBF00EEBA31 /* Pretendard-ExtraLight.otf */; };
 		B0E708CB28B5AEC000EEBA31 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0E708C328B5AEBF00EEBA31 /* Pretendard-ExtraLight.otf */; };
@@ -153,6 +154,7 @@
 		B06F45F328B7014B000C3E2D /* CarrierCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierCellView.swift; sourceTree = "<group>"; };
 		B06F45F528B70D48000C3E2D /* NotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
 		B06F45F828B753C7000C3E2D /* Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		B08C210428B8B2C5006B816F /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		B0D3C14628B35D5D009A2CD3 /* RegistrationNumberTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationNumberTextFieldView.swift; sourceTree = "<group>"; };
 		B0E708C328B5AEBF00EEBA31 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		B0E708C428B5AEBF00EEBA31 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
@@ -213,12 +215,13 @@
 		461087EB28B20FFC00616985 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				B06F45F528B70D48000C3E2D /* NotificationName+Extension.swift */,
 				4610881328B21BA400616985 /* NSAttributedString+Extension.swift */,
 				4610881728B21C0700616985 /* Optional+Extension.swift */,
 				4610880B28B2134900616985 /* UIColor+Extension.swift */,
 				461087EC28B2100500616985 /* UIFont+Extension.swift */,
 				4610880F28B215B100616985 /* UIImage+Extension.swift */,
-				B06F45F528B70D48000C3E2D /* NotificationName+Extension.swift */,
+				B08C210428B8B2C5006B816F /* UILabel+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				B046A44B28B473B7001738DF /* Common.swift in Sources */,
 				B06F45F628B70D48000C3E2D /* NotificationName+Extension.swift in Sources */,
 				461087ED28B2100500616985 /* UIFont+Extension.swift in Sources */,
+				B08C210528B8B2C5006B816F /* UILabel+Extension.swift in Sources */,
 				461087E628B1F59700616985 /* NameTextFieldView.swift in Sources */,
 				4610881028B215B100616985 /* UIImage+Extension.swift in Sources */,
 				B06F45F428B7014B000C3E2D /* CarrierCellView.swift in Sources */,

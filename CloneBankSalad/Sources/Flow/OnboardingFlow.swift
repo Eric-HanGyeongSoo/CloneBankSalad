@@ -9,10 +9,12 @@ import Foundation
 import RxFlow
 import UIKit
 import RxSwift
+import SafariServices
 
 enum OnboardingStep: Step {
   case start
   case presentCarrierModal(_ observer: PublishSubject<MobileCarrier>)
+  case myDataPortal
 }
 
 class OnboardingFlow: Flow {
@@ -47,6 +49,13 @@ class OnboardingFlow: Flow {
         .disposed(by: vc.disposeBag)
       
       return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: reactor))
+    case .myDataPortal:
+      let vc = SFSafariViewController(url: URL(string: "https://www.mydatacenter.or.kr:3441/myd/index/index.do")!).then {
+        $0.dismissButtonStyle = .close
+        $0.preferredControlTintColor = UIColor.assetColor(.co_1ac66d)
+      }
+      rootViewController.topViewController?.present(vc, animated: true)
+      return .none
     }
   }
 }

@@ -27,4 +27,13 @@ extension NSMutableAttributedString {
     let range = range.isNil ? wholeRange : range!
     self.addAttribute(.kern, value: spacing, range: range)
   }
+  
+  func setLineHeight(_ height: CGFloat, font: UIFont, range: NSRange? = nil) {
+    let range = range.isNil ? wholeRange : range!
+    let style = NSMutableParagraphStyle()
+    style.maximumLineHeight = height
+    style.minimumLineHeight = height
+    self.addAttribute(.paragraphStyle, value: style, range: range)
+    self.addAttribute(.baselineOffset, value: (height - font.lineHeight) / 4, range: range)
+  }
 }
