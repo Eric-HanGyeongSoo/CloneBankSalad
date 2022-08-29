@@ -29,6 +29,7 @@ class NameTextFieldView: UIView, View {
     $0.attributedPlaceholder = attributedPlaceholder
     $0.font = UIFont.appleSDGothicNeo(size: 18, weight: .medium)
     $0.textColor = UIColor.assetColor(.co_2b3034)
+    $0.accessibilityIdentifier = "이름 입력란"
   }
   
   lazy var clearButton = UIButton().then {

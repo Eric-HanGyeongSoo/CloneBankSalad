@@ -44,7 +44,7 @@
 		462F46C128AF9F0B00B5BA68 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 462F46C028AF9F0B00B5BA68 /* RxRelay */; };
 		462F46C328AF9F0B00B5BA68 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 462F46C228AF9F0B00B5BA68 /* RxSwift */; };
 		462F46CB28AF9F3C00B5BA68 /* CloneBankSaladTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F46CA28AF9F3C00B5BA68 /* CloneBankSaladTests.swift */; };
-		462F46D828AF9F4D00B5BA68 /* CloneBankSaladUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F46D728AF9F4D00B5BA68 /* CloneBankSaladUITests.swift */; };
+		462F46D828AF9F4D00B5BA68 /* IdentifyingUserViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F46D728AF9F4D00B5BA68 /* IdentifyingUserViewControllerUITests.swift */; };
 		462F46DA28AF9F4D00B5BA68 /* CloneBankSaladUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F46D928AF9F4D00B5BA68 /* CloneBankSaladUITestsLaunchTests.swift */; };
 		462F46E328AFA1D400B5BA68 /* IdentifyingUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F46E228AFA1D400B5BA68 /* IdentifyingUserViewController.swift */; };
 		462F46E628AFA28800B5BA68 /* IdentifyingUserViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F46E528AFA28800B5BA68 /* IdentifyingUserViewControllerTests.swift */; };
@@ -130,7 +130,7 @@
 		462F46C828AF9F3C00B5BA68 /* CloneBankSaladTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloneBankSaladTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		462F46CA28AF9F3C00B5BA68 /* CloneBankSaladTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloneBankSaladTests.swift; sourceTree = "<group>"; };
 		462F46D528AF9F4D00B5BA68 /* CloneBankSaladUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloneBankSaladUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		462F46D728AF9F4D00B5BA68 /* CloneBankSaladUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloneBankSaladUITests.swift; sourceTree = "<group>"; };
+		462F46D728AF9F4D00B5BA68 /* IdentifyingUserViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyingUserViewControllerUITests.swift; sourceTree = "<group>"; };
 		462F46D928AF9F4D00B5BA68 /* CloneBankSaladUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloneBankSaladUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		462F46E228AFA1D400B5BA68 /* IdentifyingUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyingUserViewController.swift; sourceTree = "<group>"; };
 		462F46E528AFA28800B5BA68 /* IdentifyingUserViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyingUserViewControllerTests.swift; sourceTree = "<group>"; };
@@ -289,7 +289,7 @@
 		462F46D628AF9F4D00B5BA68 /* CloneBankSaladUITests */ = {
 			isa = PBXGroup;
 			children = (
-				462F46D728AF9F4D00B5BA68 /* CloneBankSaladUITests.swift */,
+				B0E190B028BC974A00DD1F91 /* OnboardingTests */,
 				462F46D928AF9F4D00B5BA68 /* CloneBankSaladUITestsLaunchTests.swift */,
 			);
 			path = CloneBankSaladUITests;
@@ -385,6 +385,14 @@
 				B06F45F828B753C7000C3E2D /* Regex.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		B0E190B028BC974A00DD1F91 /* OnboardingTests */ = {
+			isa = PBXGroup;
+			children = (
+				462F46D728AF9F4D00B5BA68 /* IdentifyingUserViewControllerUITests.swift */,
+			);
+			path = OnboardingTests;
 			sourceTree = "<group>";
 		};
 		B0E708C128B5AEA100EEBA31 /* NotoSansKR */ = {
@@ -623,7 +631,7 @@
 				4610881A28B21C0700616985 /* Optional+Extension.swift in Sources */,
 				462F46DA28AF9F4D00B5BA68 /* CloneBankSaladUITestsLaunchTests.swift in Sources */,
 				4610881628B21BA400616985 /* NSAttributedString+Extension.swift in Sources */,
-				462F46D828AF9F4D00B5BA68 /* CloneBankSaladUITests.swift in Sources */,
+				462F46D828AF9F4D00B5BA68 /* IdentifyingUserViewControllerUITests.swift in Sources */,
 				4610881228B215B100616985 /* UIImage+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -700,6 +708,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U9B2QVCTVS;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.codecamper.CloneBankSaladTests;
@@ -717,6 +726,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U9B2QVCTVS;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.codecamper.CloneBankSaladTests;
@@ -733,6 +743,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U9B2QVCTVS;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.codecamper.CloneBankSaladUITests;
@@ -749,6 +760,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U9B2QVCTVS;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.codecamper.CloneBankSaladUITests;

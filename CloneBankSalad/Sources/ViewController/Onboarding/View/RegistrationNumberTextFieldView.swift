@@ -29,6 +29,7 @@ class RegistrationNumberTextFieldView: UIView, View {
     attributedPlaceholder.setLetterSpacing(-0.09)
     $0.attributedPlaceholder = attributedPlaceholder
     $0.keyboardType = .numberPad
+    $0.accessibilityIdentifier = "주민등록번호 앞번호 입력란"
   }
   
   lazy var genderTextField = UITextField().then {
@@ -37,6 +38,7 @@ class RegistrationNumberTextFieldView: UIView, View {
     attributedPlaceholder.setColor(UIColor.assetColor(.co_848894))
     $0.attributedPlaceholder = attributedPlaceholder
     $0.keyboardType = .numberPad
+    $0.accessibilityIdentifier = "주민등록번호 뒷번호 첫자리 입력란"
   }
   
   lazy var genderTextFieldStackView = UIStackView().then {
