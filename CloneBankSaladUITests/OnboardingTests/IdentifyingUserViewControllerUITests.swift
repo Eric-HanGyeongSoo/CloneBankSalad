@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Then
 
 class IdentifyingUserViewControllerUITests: XCTestCase {
   
@@ -147,6 +148,94 @@ class IdentifyingUserViewControllerUITests: XCTestCase {
     // then
     XCTAssert(app.registrationNumberErrorLabel.exists)
   }
+  
+  func test통신사_선택_버튼_똥작_테스트() throws {
+    // given
+    let app = launchApp()
+    
+    // when
+    app.carrierSelectionButton.tap()
+    
+    // then
+    XCTAssert(app.staticTexts["통신사 선택"].waitForExistence(timeout: 3))
+    
+    // when
+    app.staticTexts["LGU+"].tap()
+    
+    // then
+    XCTAssert(app.carrierSelectionButton.staticTexts["LGU+"].waitForExistence(timeout: 3))
+    _ = app.buttons["Done"].waitForExistence(timeout: 3)
+    app.phoneNumberTextField.typeText("01024071387")  // Check PhoneNumberTextField Has Focus
+  }
+  
+  func test전화번호_입력란_Focused_에러문구() throws {
+    // given
+    let app = launchApp()
+    
+    // when
+    app.endEditing()
+    app.phoneNumberTextField.tap()
+    app.phoneNumberTextField.typeText("010343")
+    
+    // then
+    takeScreenShot(app)
+    XCTAssert(!app.phoneNumberErrorLabel.exists)
+    
+    // when
+    app.phoneNumberClearButton.tap()
+    app.phoneNumberTextField.tap()
+    app.phoneNumberTextField.typeText("013343")
+    
+    // then
+    takeScreenShot(app)
+    XCTAssert(app.phoneNumberErrorLabel.exists)
+  }
+  
+  func test전화번호_입력란_Not_Focused_에러문구() throws {
+    // given
+    let app = launchApp()
+    
+    // when - 10자리 이상 입력하지 않을 시 에러문구 노출
+    app.phoneNumberTextField.tap()
+    app.phoneNumberTextField.typeText("010343")
+    app.endEditing()
+    
+    // then
+    takeScreenShot(app)
+    XCTAssertTrue(app.phoneNumberErrorLabel.exists)
+    
+    // when - (01[016789])로 시작하지 않을 시 에러문구 노출
+    app.phoneNumberClearButton.tap()
+    app.phoneNumberTextField.tap()
+    app.phoneNumberTextField.typeText("01334371387")
+    app.endEditing()
+    
+    // then
+    takeScreenShot(app)
+    XCTAssertTrue(app.phoneNumberErrorLabel.exists)
+    
+    // when - 비어있을 시 에러문구를 노출하지 않음
+    app.phoneNumberClearButton.tap()
+    
+    // then
+    XCTAssertFalse(app.phoneNumberErrorLabel.exists)
+    
+    // when - 정규식에 맞는 전화번호라면 에러문구 노출하지 않음
+    app.phoneNumberTextField.tap()
+    app.phoneNumberTextField.typeText("01024071387")
+    app.endEditing()
+    
+    // then
+    takeScreenShot(app)
+    XCTAssertFalse(app.phoneNumberErrorLabel.exists)
+  }
+  
+  private func takeScreenShot(_ app: XCUIApplication) {
+    let screenshot = app.screenshot().image
+    let attachment = XCTAttachment(image: screenshot)
+    attachment.lifetime = .keepAlways
+    self.add(attachment)
+  }
 }
 
 fileprivate extension XCUIApplication {
@@ -168,6 +257,22 @@ fileprivate extension XCUIApplication {
   
   var registrationNumberErrorLabel: XCUIElement {
     return self.staticTexts["입력한 정보를 확인해주세요"]
+  }
+  
+  var carrierSelectionButton: XCUIElement {
+    return self.otherElements["통신사 선택 버튼"]
+  }
+  
+  var phoneNumberTextField: XCUIElement {
+    return self.textFields["전화번호 입력란"]
+  }
+  
+  var phoneNumberErrorLabel: XCUIElement {
+    return self.staticTexts["입력한 번호를 확인해주세요"]
+  }
+  
+  var phoneNumberClearButton: XCUIElement {
+    return self.buttons["전화번호 입력란 삭제 버튼"]
   }
   
   func endEditing() {
