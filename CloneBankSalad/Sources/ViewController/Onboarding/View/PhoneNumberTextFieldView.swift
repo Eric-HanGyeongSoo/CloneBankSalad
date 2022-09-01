@@ -15,68 +15,50 @@ import SnapKit
 // MARK: - View
 class PhoneNumberTextFieldView: UIView, View {
   // MARK: View Components
-  lazy var label: UILabel = {
-    let label = UILabel()
-    label.text = "휴대폰번호"
-    label.font = UIFont.appleSDGothicNeo(size: 12, weight: .medium)
-    label.textColor = UIColor.assetColor(.co_656e77)
-    return label
-  }()
+  lazy var label = UILabel().then {
+    $0.text = "휴대폰번호"
+    $0.font = UIFont.appleSDGothicNeo(size: 12, weight: .medium)
+    $0.textColor = UIColor.assetColor(.co_656e77)
+  }
   
-  lazy var carrierSelectionButton: CarrierSelectionButtonView = {
-    let view = CarrierSelectionButtonView()
-    view.reactor = CarrierSelectionButtonReactor()
-    return view
-  }()
+  lazy var carrierSelectionButton = CarrierSelectionButtonView().then {
+    $0.reactor = CarrierSelectionButtonReactor()
+    $0.accessibilityIdentifier = "통신사 선택 버튼"
+  }
   
-  lazy var clearButton: UIButton = {
-    let button = UIButton()
-    button.setImage(UIImage.assetImage(.onboarding_clear), for: .normal)
-    return button
-  }()
+  lazy var clearButton = UIButton().then {
+    $0.setImage(UIImage.assetImage(.onboarding_clear), for: .normal)
+  }
   
-  lazy var textField: UITextField = {
-    let textField = UITextField()
+  lazy var textField = UITextField().then {
     let attributedPlaceholder = NSMutableAttributedString(string: "휴대폰번호 입력")
     attributedPlaceholder.setFont(UIFont.appleSDGothicNeo(size: 18, weight: .medium))
     attributedPlaceholder.setColor(UIColor.assetColor(.co_848894))
     attributedPlaceholder.setLetterSpacing(-0.09)
-    textField.attributedPlaceholder = attributedPlaceholder
-    textField.keyboardType = .numberPad
-    return textField
-  }()
+    $0.attributedPlaceholder = attributedPlaceholder
+    $0.keyboardType = .numberPad
+    $0.accessibilityIdentifier = "전화번호 입력란"
+  }
   
-  lazy var wrapperView: UIView = {
-    let view = UIView()
-    view.backgroundColor = UIColor.assetColor(.co_fafafa)
-    view.layer.cornerRadius = 13
-    view.layer.borderWidth = 1
-    view.layer.borderColor = UIColor.clear.cgColor
-    view.addSubview(label)
-    view.addSubview(carrierSelectionButton)
-    view.addSubview(textField)
-    view.addSubview(clearButton)
-    return view
-  }()
+  lazy var wrapperView = UIView().then {
+    $0.backgroundColor = UIColor.assetColor(.co_fafafa)
+    $0.layer.cornerRadius = 13
+    $0.layer.borderWidth = 1
+    $0.layer.borderColor = UIColor.clear.cgColor
+  }
   
-  lazy var errorLabel: UILabel = {
-    let label = UILabel()
-    label.text = "입력한 번호를 확인해주세요"
-    label.font = UIFont.appleSDGothicNeo(size: 12, weight: .medium)
-    label.textColor = UIColor.assetColor(.co_ee2440)
-    label.isHidden = true
-    return label
-  }()
+  lazy var errorLabel = UILabel().then {
+    $0.text = "입력한 번호를 확인해주세요"
+    $0.font = UIFont.appleSDGothicNeo(size: 12, weight: .medium)
+    $0.textColor = UIColor.assetColor(.co_ee2440)
+    $0.isHidden = true
+  }
   
-  lazy var stackView: UIStackView = {
-    let stackView = UIStackView()
-    stackView.axis = .vertical
-    stackView.alignment = .leading
-    stackView.spacing = 9
-    stackView.addArrangedSubview(wrapperView)
-    stackView.addArrangedSubview(errorLabel)
-    return stackView
-  }()
+  lazy var stackView = UIStackView().then {
+    $0.axis = .vertical
+    $0.alignment = .leading
+    $0.spacing = 9
+  }
   
   // MARK: Associated Types
   typealias Reactor = PhoneNumberTextFieldReactor
@@ -91,6 +73,7 @@ class PhoneNumberTextFieldView: UIView, View {
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupViews()
+    buildViewHierarchy()
     self.setNeedsUpdateConstraints()
   }
   
@@ -114,9 +97,22 @@ class PhoneNumberTextFieldView: UIView, View {
   }
   
   
+  // MARK: Build View Hierarchy
+  func buildViewHierarchy() {
+    self.addSubview(stackView)
+    
+    stackView.addArrangedSubview(wrapperView)
+    stackView.addArrangedSubview(errorLabel)
+    
+    wrapperView.addSubview(label)
+    wrapperView.addSubview(carrierSelectionButton)
+    wrapperView.addSubview(textField)
+    wrapperView.addSubview(clearButton)
+  }
+  
+  
   // MARK: Layout Views
   func setupConstraints() {
-    self.addSubview(stackView)
     stackView.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
