@@ -28,6 +28,7 @@ class PhoneNumberTextFieldView: UIView, View {
   
   lazy var clearButton = UIButton().then {
     $0.setImage(UIImage.assetImage(.onboarding_clear), for: .normal)
+    $0.accessibilityIdentifier = "전화번호 입력란 삭제 버튼"
   }
   
   lazy var textField = UITextField().then {
@@ -190,6 +191,7 @@ class PhoneNumberTextFieldView: UIView, View {
       } else if phone.isEmpty {
         self?.wrapperView.layer.borderColor = UIColor.clear.cgColor
         self?.wrapperView.backgroundColor = UIColor.assetColor(.co_fafafa)
+        self?.errorLabel.isHidden = true
       } else {
         self?.wrapperView.backgroundColor = UIColor.white
         if !Regex.phone.validate(phone) {
